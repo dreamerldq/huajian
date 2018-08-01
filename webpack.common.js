@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const entryHtml = [
   'index',
@@ -23,24 +24,6 @@ const webpackConfig = {
           { loader: 'babel-loader' },
         ],
         exclude: /node_modules/,
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          { loader: 'style-loader' },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              namedExport: true,
-              camelCase: true,
-              minimize: true,
-              importLoaders: 1,
-              localIdentName: '[local]_[hash:base64:5]',
-            },
-          },
-          { loader: 'sass-loader' },
-        ],
       },
       {
         test: /\.css$/,
