@@ -3,7 +3,10 @@ import ReactDOM from 'react-dom';
 import { Button, Flex, WingBlank } from 'antd-mobile';
 import axios from 'axios';
 import styles from './index.scss';
+import Tabbar from '../../component/Tabbar';
 import Lunbo from '../../component/Lunbo';
+import BannerTitle from '../../component/BannerTitle';
+import Noval from '../../component/Noval';
 
 const wx = require('weixin-js-sdk');
 
@@ -48,15 +51,10 @@ class App extends React.Component {
   render() {
     return (
             <React.Fragment >
-
               <div className={styles.container}>
-             <WingBlank size='md'>
               <Lunbo></Lunbo>
-                <div className={styles.boxGroup}>
-                <div className={styles.box}></div>
-                <div className={styles.box}></div>
-                </div>
-              </WingBlank>
+                <Noval></Noval>
+                {/* <Tabbar className={styles.tabbar} /> */}
               </div>
 
             </React.Fragment>
