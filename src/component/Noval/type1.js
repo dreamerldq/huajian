@@ -15,7 +15,7 @@ export default class ViewType1 extends React.Component {
                                         {item.title}
                                     </div>
                                    {item.image.map((images, index) => (
-                                      <img key={index} className={styles.viewImage1} src={images}></img>
+                                      <img key={index} className={styles.viewImage1} src={`https://t3908.xintiaotime.com${images}`}></img>
                                    ))}
                                     <div className={styles.type_container}>
                                         {

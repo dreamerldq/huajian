@@ -34,7 +34,7 @@ export default class ViewType2 extends React.Component {
                     </div>
                     </div>
                     {item.image.map((images, index) => (
-                                      <img key={index} className={styles.viewImage1} src={images}></img>
+                                      <img key={index} className={styles.viewImage1} src={`https://t3908.xintiaotime.com${images}`}></img>
                     ))}
                      </div>
           </React.Fragment>
