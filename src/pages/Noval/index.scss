@@ -1,4 +1,11 @@
 @import "../../common/style.scss";
+.am-carousel-wrap-dot span{
+    display: block;
+    width: 16px !important;
+    height: 8px !important;
+    margin: 0 3px  !important;
+    border-radius: 0 !important;
+  }
 .novel_block {
     padding: Rem( 30);
     width: Rem(750);

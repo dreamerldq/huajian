@@ -6,6 +6,7 @@ import ViewType2 from '../../component/Noval/type2';
 import ViewType3 from '../../component/Noval/type3';
 import styles from '../../component/Noval/index.scss';
 import {request, api} from '../../api'
+import BannerTitle from '../../component/BannerTitle'
 class Noval extends React.Component {
   constructor(props) {
     super(props);
@@ -21,6 +22,9 @@ class Noval extends React.Component {
     };
   }
   requestNoval = () =>{
+    this.setState({
+      isLoading: true
+    })
     const {start, novalData} = this.state
     request.get(api.noval, {
       params: {
@@ -34,7 +38,7 @@ class Noval extends React.Component {
         novalData: newData,
         start: newData.length,
         dataSource: this.state.dataSource.cloneWithRows(newData),
-    isLoading: false,
+        isLoading: false,
       });
     });
   }
@@ -70,7 +74,15 @@ class Noval extends React.Component {
     );
     return (
             <React.Fragment>
+             
               <ListView
+              renderHeader={() =>  <BannerTitle title="小说快报"></BannerTitle>}
+              renderFooter={() => (
+              <div style={{ padding: 30, textAlign: 'center' }}>
+              {this.state.isLoading ? 'Loading...' : 'Loaded'}
+            </div>
+            )}
+              ref={el => this.lv = el}
                 dataSource={this.state.dataSource}
                 renderRow={row}
                 style={{

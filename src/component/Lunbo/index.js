@@ -1,6 +1,7 @@
 import React from 'react';
 import { Carousel, WingBlank } from 'antd-mobile';
 import styles from './index.scss';
+import img from '../../images/bannerBackground.png';
 
 export default class Lunbo extends React.Component {
   constructor(props) {
@@ -23,13 +24,40 @@ export default class Lunbo extends React.Component {
   render() {
     return (
       <div style={{ width: '10rem' }}>
-              <WingBlank>
+        <div className={styles.topContainer}>
+
+      <div className={styles.navbar}>
+        <ul>
+          <a><li>首页</li></a>
+          <a><li>书城</li></a>
+          <a><li>搜索</li></a>
+          <a><li>充值</li></a>
+          <a><li>个人中心</li></a>
+
+        </ul>
+      </div>
+        <img className={styles.bannerBackground} src={img}/>
+        <div className={styles.carousel}>
         <Carousel className={styles.spaceCarousel}
           frameOverflow="visible"
           cellSpacing={10}
           slideWidth={0.9}
           autoplay
           infinite
+          dotStyle={
+            {
+              width: '0.61rem',
+              height: '0.09rem',
+              borderRadius: '0px',
+            }
+          }
+          dotActiveStyle={
+            {
+              width: '0.61rem',
+              height: '0.09rem',
+              borderRadius: '0px',
+            }
+          }
           beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
           afterChange={index => this.setState({ slideIndex: index })}
         >
@@ -37,28 +65,33 @@ export default class Lunbo extends React.Component {
             <a
               key={val}
               href="http://www.alipay.com"
+
               style={{
                 display: 'block',
-                position: 'relative',
-                top: this.state.slideIndex === index ? -10 : 0,
-                height: this.state.imgHeight,
-                boxShadow: '2px 1px 1px rgba(0, 0, 0, 0.2)',
+                // position: 'relative',
+                // top: this.state.slideIndex === index ? -10 : 0,
+                // height: this.state.imgHeight,
+                // boxShadow: '2px 1px 1px rgba(0, 0, 0, 0.2)',
               }}
             >
               <img
                 src={`https://zos.alipayobjects.com/rmsportal/${val}.png`}
                 alt=""
-                style={{ width: '100%', verticalAlign: 'top' }}
+                style={{ width: '100%' }}
                 onLoad={() => {
                   // fire window resize event to change height
-                  window.dispatchEvent(new Event('resize'));
-                  this.setState({ imgHeight: 'auto' });
+                  // window.dispatchEvent(new Event('resize'));
+                  // this.setState({ imgHeight: 'auto' });
                 }}
               />
             </a>
           ))}
         </Carousel>
-      </WingBlank>
+        </div>
+
+        </div>
+
+
       </div>
 
     );

@@ -6,6 +6,6 @@ const api = {
 };
 const request = axios.create({
   baseURL,
-  timeout: 5000,
+  timeout: 10000,
 });
 export { request, api };
