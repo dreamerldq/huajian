@@ -15,11 +15,10 @@ export default class HotContent extends React.Component {
 
 
   componentDidMount() {
-    request.get(api.freeRead)
+    request.get(api.week)
       .then((res) => {
-        console.log('限时免费', res);
         this.setState({
-          commendData: res.data.slice(0, 6),
+          commendData: res.data,
         });
       });
   }

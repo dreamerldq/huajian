@@ -9,7 +9,6 @@ export default class Recommend extends React.Component {
 
   render() {
     const { item } = this.props;
-    console.log('item', item);
     return (
         <div className={styles.rank_article}>
             <div className={styles.article_container} key={item.id}>
@@ -18,7 +17,7 @@ export default class Recommend extends React.Component {
                     <div>{item.title}</div>
                     <div className={styles.title}>{item.desc}</div>
                     <div>作者：{item.zuozhe}</div>
-                    {/* <div className={styles.article_type}>{item.type}</div> */}
+                    <div className={styles.article_type}>{item.tstype}</div>
                 </div>
             </div>
         </div>

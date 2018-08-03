@@ -77,7 +77,8 @@ export default class Lunbo extends React.Component {
               }}
             >
               <img
-                src={`https://t3908.xintiaotime.com${val.image}`}
+                // src={`https://t3908.xintiaotime.com${val.image}`}
+                src={'https://zos.alipayobjects.com/rmsportal/AiyWuByWklrrUDlFignR.png'}
                 className={styles.image}
                 alt=""
                 // style={{ width: '100%' }}

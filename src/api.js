@@ -7,6 +7,7 @@ const api = {
   recommend: '/jinjiang/jjhome',
   all: '/hjindex/index',
   freeRead: '/hjindex/free_list',
+  week: '/hjindex/week_list',
 };
 const request = axios.create({
   baseURL,

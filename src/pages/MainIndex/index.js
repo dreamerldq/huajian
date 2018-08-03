@@ -52,7 +52,6 @@ class App extends React.Component {
       });
     request.get(api.all)
       .then((res) => {
-        console.log('全部数据', res);
         this.setState({
           allData: res.data,
         });
@@ -65,9 +64,9 @@ class App extends React.Component {
             <React.Fragment >
               <div className={styles.container}>
               <Lunbo bannerData={this.state.allData.banner_list}></Lunbo>
+              <Recommond zhubianData={this.state.allData.zhubian_list} count={this.state.allData.count}></Recommond>
               <LimitRead></LimitRead>
               <HotContent ></HotContent>
-              <Recommond></Recommond>
                 <Noval></Noval>
                 {/* <Tabbar className={styles.tabbar} /> */}
               </div>
