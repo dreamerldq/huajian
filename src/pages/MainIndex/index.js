@@ -9,6 +9,7 @@ import Recommond from '../../component/recommend';
 import HotContent from '../../component/HotContent';
 import { api, request } from '../../api';
 import LimitRead from '../../component/LimitRead';
+import CicleNav from '../../component/CicleNav';
 
 const wx = require('weixin-js-sdk');
 
@@ -64,6 +65,7 @@ class App extends React.Component {
             <React.Fragment >
               <div className={styles.container}>
               <Lunbo bannerData={this.state.allData.banner_list}></Lunbo>
+              <CicleNav></CicleNav>
               <Recommond zhubianData={this.state.allData.zhubian_list} count={this.state.allData.count}></Recommond>
               <LimitRead></LimitRead>
               <HotContent ></HotContent>

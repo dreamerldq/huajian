@@ -1,0 +1,17 @@
+@import "../../common/style.scss";
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: Rem(24)
+    }
+    img{
+        width: Rem(136);
+        height: Rem(136)
+    }
+}
