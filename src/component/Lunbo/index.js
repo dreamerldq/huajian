@@ -6,6 +6,19 @@ import img from '../../images/bannerBackground.png';
 export default class Lunbo extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      data: ['1', '2', '3'],
+      imgHeight: '4rem',
+    };
+  }
+
+  componentDidMount() {
+    // simulate img loading
+    setTimeout(() => {
+      this.setState({
+        data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
+      });
+    }, 100);
   }
 
   render() {
@@ -26,12 +39,13 @@ export default class Lunbo extends React.Component {
       </div>
         <img className={styles.bannerBackground} src={img}/>
         <div className={styles.carousel}>
-        <Carousel className={styles.spaceCarousel}
-           frameOverflow="visible"
-           cellSpacing={10}
-           slideWidth={0.9}
-           autoplay
-           infinite
+        <Carousel className="space-carousel"
+          frameOverflow="hidden"
+          cellSpacing={5}
+          slideWidth={0.95}
+          autoplay
+          infinite
+          beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
           dotStyle={
             {
               width: '0.61rem',
@@ -46,18 +60,30 @@ export default class Lunbo extends React.Component {
               borderRadius: '0px',
             }
           }
-           beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-           afterChange={index => this.setState({ slideIndex: index })}
-         >
+
+        >
+
           {(bannerData || []).map((val, index) => (
             <a
-              key={`${index}`}
+              key={val}
               href="http://www.alipay.com"
+              style={{
+                display: 'block',
+                position: 'relative',
+                top: -15,
+                height: this.state.imgHeight,
+              }}
             >
               <img
+                // src={`https://zos.alipayobjects.com/rmsportal/${val}.png`}
                 src={`https://t3908.xintiaotime.com${val.image}`}
-                className={styles.image}
                 alt=""
+                className={styles.image}
+                onLoad={() => {
+                  // fire window resize event to change height
+                  window.dispatchEvent(new Event('resize'));
+                  this.setState({ imgHeight: '4rem' });
+                }}
               />
             </a>
           ))}
