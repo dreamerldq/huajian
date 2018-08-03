@@ -3,16 +3,21 @@ import ReactDOM from 'react-dom';
 import { Button, Flex, WingBlank } from 'antd-mobile';
 import axios from 'axios';
 import styles from './index.scss';
-import Tabbar from '../../component/Tabbar';
 import Lunbo from '../../component/Lunbo';
-import BannerTitle from '../../component/BannerTitle';
 import Noval from '../../component/Noval';
+import Recommond from '../../component/recommend';
+import HotContent from '../../component/HotContent';
+import { api, request } from '../../api';
+import LimitRead from '../../component/LimitRead';
 
 const wx = require('weixin-js-sdk');
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      allData: {},
+    };
   }
 
   componentDidMount() {
@@ -45,10 +50,13 @@ class App extends React.Component {
           // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
         });
       });
-    // axios.get('https://novel.in.xintiaotime.com/index.php/cms/hjindex/index/')
-    //   .then((res) => {
-    //     console.log(res);
-    //   });
+    request.get(api.all)
+      .then((res) => {
+        console.log('全部数据', res);
+        this.setState({
+          allData: res.data,
+        });
+      });
   }
 
 
@@ -56,7 +64,10 @@ class App extends React.Component {
     return (
             <React.Fragment >
               <div className={styles.container}>
-              <Lunbo></Lunbo>
+              <Lunbo bannerData={this.state.allData.banner_list}></Lunbo>
+              <LimitRead></LimitRead>
+              <HotContent ></HotContent>
+              <Recommond></Recommond>
                 <Noval></Noval>
                 {/* <Tabbar className={styles.tabbar} /> */}
               </div>

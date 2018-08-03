@@ -22,13 +22,15 @@ export default class Lunbo extends React.Component {
   }
 
   render() {
+    const { bannerData } = this.props;
+    console.log('QQQQQQQ', bannerData);
     return (
       <div style={{ width: '10rem' }}>
         <div className={styles.topContainer}>
 
       <div className={styles.navbar}>
         <ul>
-          <a><li>首页</li></a>
+          <a><li className={styles.yellowLi}>首页</li></a>
           <a><li>书城</li></a>
           <a><li>搜索</li></a>
           <a><li>充值</li></a>
@@ -58,10 +60,10 @@ export default class Lunbo extends React.Component {
               borderRadius: '0px',
             }
           }
-          beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-          afterChange={index => this.setState({ slideIndex: index })}
+          // beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
+          // afterChange={index => this.setState({ slideIndex: index })}
         >
-          {this.state.data.map((val, index) => (
+          {(bannerData || []).map((val, index) => (
             <a
               key={val}
               href="http://www.alipay.com"
@@ -75,9 +77,10 @@ export default class Lunbo extends React.Component {
               }}
             >
               <img
-                src={`https://zos.alipayobjects.com/rmsportal/${val}.png`}
+                src={`https://t3908.xintiaotime.com${val.image}`}
+                className={styles.image}
                 alt=""
-                style={{ width: '100%' }}
+                // style={{ width: '100%' }}
                 onLoad={() => {
                   // fire window resize event to change height
                   // window.dispatchEvent(new Event('resize'));

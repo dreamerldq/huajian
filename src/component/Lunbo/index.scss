@@ -23,17 +23,27 @@
             display: flex;
             padding: 0;
             margin: 0;
+            height: Rem(90);
+            // align-items: center;
             justify-content: space-around;
             li{
                 color: #fff;
                 font-size: Rem(32);
-                display: inline-block
+                display: inline-block;
+                height: Rem(90);
+                line-height: Rem(90);
+                width:Rem(90);
+                text-align: center;
+            }
+            .yellowLi{
+                background-image: linear-gradient(-180deg, #FED050 5%, #FDD385 98%);
+                color: #000000;
             }
         }
     }
     .carousel{
         position: absolute;
-        top: Rem(50);
+        top: Rem(70);
         width: Rem(750);
         height: Rem(300);
     }
@@ -42,4 +52,8 @@
         background: #DEF1E5;
         overflow: hidden;
       }
+}
+.image{
+    width: Rem(700);
+    height: Rem(284);
 }
