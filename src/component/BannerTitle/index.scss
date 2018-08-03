@@ -24,3 +24,16 @@
     border-radius: Rem(100);
   }
 }
+.banner1 {
+  width: 100%;
+  height: Rem(94);
+  font-size:Rem(42);
+  color: #000000;
+  display: flex;
+  justify-content: space-between;
+  .text1 {
+    position: relative;
+    line-height:Rem(94);
+    margin-left:Rem(18);
+  }
+}

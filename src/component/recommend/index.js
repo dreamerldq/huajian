@@ -46,7 +46,7 @@ export default class Recommend extends React.Component {
                             <span>《{book.title}》</span>
                         - {book.zuozhe}
                         </div>
-                        <div className={styles.readCount}>{book.div}阅读</div>
+                        <div className={styles.readCount}>{book.view}阅读</div>
                         </div>
                     </div> : null
 
