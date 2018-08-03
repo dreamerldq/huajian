@@ -5,14 +5,10 @@
       margin-bottom:Rem(20);
       width: Rem(750);
   }
-  .rank_article{
-     
-  }
   .article_image{
       height: Rem(240) !important;
       width: Rem(180) !important;
       margin-right:Rem(24);
-      border-radius:Rem(10);
   }
   .article_container{
     display: flex;
@@ -28,11 +24,6 @@
     height: Rem(240);
     position: relative;
   }
-  /* .article_type{
-    position: absolute;
-    bottom: 0;
-    display: flex;
-  } */
   .article_type{
     position: absolute;
     bottom: 0;

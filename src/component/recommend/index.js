@@ -24,9 +24,9 @@ export default class Recommend extends React.Component {
 
                     (zhubianData || []).map((book, index) => (
                       count > index
-                        ? <div className={styles.image}>
+                        ? <div key={book.id} className={styles.image}>
                               <a href="http://www.baidu.com">
-                        <img key={book.id} src={`https://t3908.xintiaotime.com${book.image}`}></img>
+                        <img src={`https://t3908.xintiaotime.com${book.image}`}></img>
                         </a>
                         <span>{book.title}</span>
                         </div>

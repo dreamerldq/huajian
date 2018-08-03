@@ -10,10 +10,11 @@ export default class BannerTitle extends React.Component {
     const { title } = this.props;
     return (
             <React.Fragment>
-                <view className={styles.banner}>
-        <view className={styles.text}>{title}</view>
-
-    </view>
+                <div className={styles.banner}>
+                <div className={styles.text}>
+                {title}
+                  </div>
+              </div>
             </React.Fragment>
     );
   }

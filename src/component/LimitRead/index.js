@@ -37,7 +37,7 @@ export default class HotContent extends React.Component {
                         <img className={styles.limitfree} src={limitfree}></img>
                 </div>
 
-                <text>{item.title}</text>
+                <span>{item.title}</span>
                 </div>
 
             </div>
