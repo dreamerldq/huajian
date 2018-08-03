@@ -25,7 +25,9 @@ export default class HotContent extends React.Component {
   render() {
     return (
         <React.Fragment>
-        <BannerTitle title="限时免费"></BannerTitle>
+        <BannerTitle url="#" title="限时免费">
+            更多>
+        </BannerTitle>
         <div className={styles.limit_container}>
             {
                 this.state.freeData.map((item, index) => (

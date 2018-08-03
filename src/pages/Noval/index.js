@@ -76,7 +76,7 @@ class Noval extends React.Component {
             <React.Fragment>
              
               <ListView
-              renderHeader={() =>  <BannerTitle title="小说快报"></BannerTitle>}
+              renderHeader={() =>  <BannerTitle title="小说快报" readMore={true}></BannerTitle>}
               renderFooter={() => (
               <div style={{ padding: 30, textAlign: 'center' }}>
               {this.state.isLoading ? 'Loading...' : 'Loaded'}

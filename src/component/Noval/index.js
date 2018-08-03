@@ -33,7 +33,9 @@ export default class Noval extends React.Component {
   render() {
     return (
           <React.Fragment>
-              <BannerTitle title="小说快报"></BannerTitle>
+              <BannerTitle url="#" title="小说快报">
+                    更多>
+              </BannerTitle>
               <div className={styles.novel_block}>
                 {this.state.novalData.map((item, index) => (
                         <div className={styles.novel_item} key={index}>

@@ -31,9 +31,17 @@
   color: #000000;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  .readMore{
+    
+      font-size: Rem(28);
+      margin-right: Rem(20);
+      color: #000000;
+   
+  }
   .text1 {
     position: relative;
     line-height:Rem(94);
-    margin-left:Rem(18);
+    margin-left:Rem(20);
   }
 }

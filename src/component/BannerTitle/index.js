@@ -7,7 +7,7 @@ export default class BannerTitle extends React.Component {
   }
 
   render() {
-    const { title } = this.props;
+    const { title, url } = this.props;
     return (
             <React.Fragment>
                 {/* <div className={styles.banner}>
@@ -17,10 +17,18 @@ export default class BannerTitle extends React.Component {
               </div> */}
 
                 <div className={styles.banner1}>
-                <div className={styles.text1}>
-                {title}
-                  </div>
-              </div>
+                    <div className={styles.text1}>
+                    {title}
+                    </div>
+                    {
+
+                    React.Children.map(this.props.children, child => <a className={styles.readMore} href={url}>
+                      <span>{child}</span>
+                    </a>)
+
+                        }
+                </div>
+
             </React.Fragment>
     );
   }
