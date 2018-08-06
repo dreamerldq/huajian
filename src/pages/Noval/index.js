@@ -58,15 +58,15 @@ class Noval extends React.Component {
         <div className={styles.novel_block}>
         <div className={styles.novel_item} key={rowData.id}>
                 {rowData.style === 1
-                  ? <ViewType1 item={rowData}></ViewType1>
+                  ? <a href={`http://t2118.xintiaotime.com/index.php/cms/column/book/id/${rowData.id}.html`}><ViewType1 item={rowData}></ViewType1></a>
                   : null
                 }
                 {rowData.style === 2
-                  ? <ViewType2 item={rowData}></ViewType2>
+                  ? <a href={`http://t2118.xintiaotime.com/index.php/cms/column/book/id/${rowData.id}.html`}><ViewType2 item={rowData}></ViewType2></a>
                   : null
                 }
                 {rowData.style === 3
-                  ? <ViewType3 item={rowData}></ViewType3>
+                  ? <a href={`http://t2118.xintiaotime.com/index.php/cms/column/book/id/${rowData.id}.html`}><ViewType3 item={rowData}></ViewType3></a>
                   : null
                 }
             </div>
@@ -74,8 +74,8 @@ class Noval extends React.Component {
     );
     return (
             <React.Fragment>
-             
-              <ListView
+             <div className={styles.novalHeader}>
+             <ListView
               renderHeader={() =>  <BannerTitle title="小说快报" readMore={true}></BannerTitle>}
               renderFooter={() => (
               <div style={{ padding: 30, textAlign: 'center' }}>
@@ -95,6 +95,8 @@ class Noval extends React.Component {
                 onEndReached={this.onEndReached}
                 onEndReachedThreshold={10}
               />
+             </div>
+             
             </React.Fragment>
     );
   }

@@ -33,6 +33,7 @@ export default class HotContent extends React.Component {
                 this.state.freeData.map((item, index) => (
 
                 <div key={item.id} className={styles.limit_book}>
+                <a href={`http://t2118.xintiaotime.com/index.php/cms/column/book/id/${item.id}.html`}>
                 <div className={styles.bookBlock}>
                 <div className={styles.image_group}>
                         <img className={styles.bookimg} src={`https://t3908.xintiaotime.com${item.image}`}></img>
@@ -41,6 +42,7 @@ export default class HotContent extends React.Component {
 
                 <span>{item.title}</span>
                 </div>
+                </a>
 
             </div>
 

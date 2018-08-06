@@ -31,7 +31,10 @@ export default class HotContent extends React.Component {
           <div className={styles.container}>
               {
                   this.state.commendData.map((item, index) => (
-                          <RecommendType01 key={index} item={item}></RecommendType01>
+                    <a key={index} href={`http://t2118.xintiaotime.com/index.php/cms/column/book/id/${item.id}.html`}>
+                       <RecommendType01 item={item}></RecommendType01>
+                    </a>
+
                   ))
               }
           </div>

@@ -1,10 +1,23 @@
 @import "../../common/style.scss";
+
 .am-carousel-wrap-dot span{
     display: block;
     width: 16px !important;
     height: 8px !important;
     margin: 0 3px  !important;
     border-radius: 0 !important;
+  }
+  .novalHeader{
+      :global{
+        .am-list-view-scrollview-content{
+            .am-list{
+                .am-list-header{
+                    padding: 0;
+                }
+            }
+        }
+      
+      }
   }
 .novel_block {
     padding: Rem( 30);

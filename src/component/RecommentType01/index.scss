@@ -17,15 +17,21 @@
         color: #000000;
         
       }
+      .typeGroup{
+          display: block;
+         
+      }
       .typeGroup span:nth-child(1){
         background: #CDCDCD;
         padding: Rem(5);
         color: #FFFFFF;
+        border-radius: Rem(10) 0 0 Rem(10);
       }
       .typeGroup span:nth-child(2){
         background: #ECECEC;
         padding: Rem(5);
         color: #737373;
+        border-radius: 0 0  Rem(10) 0;
       }
   }
 

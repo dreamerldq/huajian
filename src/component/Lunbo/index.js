@@ -66,7 +66,7 @@ export default class Lunbo extends React.Component {
           {(bannerData || []).map((val, index) => (
             <a
               key={val}
-              href="http://www.alipay.com"
+              href={`http://t2118.xintiaotime.com/index.php/cms/column/book/id/${val.id}.html`}
               style={{
                 display: 'block',
                 position: 'relative',

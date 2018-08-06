@@ -25,7 +25,7 @@ export default class Recommend extends React.Component {
                     (zhubianData || []).map((book, index) => (
                       count > index
                         ? <div key={book.id} className={styles.image}>
-                              <a href="http://www.baidu.com">
+                              <a href={`http://t2118.xintiaotime.com/index.php/cms/column/book/id/${book.id}.html`}>
                         <img src={`https://t3908.xintiaotime.com${book.image}`}></img>
                         </a>
                         <span>{book.title}</span>
@@ -40,6 +40,7 @@ export default class Recommend extends React.Component {
 
                   index >= count
                     ? <div className={styles.box} key={book.id} >
+                        <a href={`http://t2118.xintiaotime.com/index.php/cms/column/book/id/${book.id}.html`}>
                         <div className={styles.desc}>{book.desc}</div>
                         <div className={styles.text}>
                         <div className={styles.title}>
@@ -48,6 +49,7 @@ export default class Recommend extends React.Component {
                         </div>
                         <div className={styles.readCount}>{book.view}阅读</div>
                         </div>
+                        </a>
                     </div> : null
 
                 ))
