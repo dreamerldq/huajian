@@ -1,22 +1,26 @@
 import { TabBar } from 'antd-mobile';
 import React from 'react';
+import styles from './index.scss';
 
 const navtgation = [
   {
-    background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat',
-    title: 'life',
+    background: 'https://novel.in.xintiaotime.com/public/static/cms/img/hj_index.png',
+    title: '首页',
+    src: '',
   },
   {
-    background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat',
-    title: 'zhifubao',
+    background: 'https://novel.in.xintiaotime.com/public/static/cms/img/hj_book.png',
+    title: '书城',
+    src: 'http://t2118.xintiaotime.com/index.php/cms/column/index.html',
   },
   {
-    background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat',
-    title: 'frend',
+    background: 'https://novel.in.xintiaotime.com/public/static/cms/img/hj_history.png',
+    title: '历史记录',
   },
   {
-    background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat',
-    title: 'my',
+    background: 'https://novel.in.xintiaotime.com/public/static/cms/img/hj_my.png',
+    title: '个人中心',
+    src: 'http://t2118.xintiaotime.com/index.php/cms/user/login.html',
   },
 ];
 export default class TabBarExample extends React.Component {
@@ -31,43 +35,17 @@ export default class TabBarExample extends React.Component {
 
   render() {
     return (
-      <div>
-        <TabBar
-          unselectedTintColor="#949494"
-          tintColor="red"
-          barTintColor="white"
-          tabBarPosition="bottom"
-        >
-        {navtgation.map((item, index) => (
-                <TabBar.Item
-            title={item.title}
-            key={item.title}
-            icon={<div style={{
-              width: '22px',
-              height: '22px',
-              background: item.background,
-            }}
-            />
-            }
-            selectedIcon={<div style={{
-              width: '22px',
-              height: '22px',
-              background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat',
-            }}
-            />
-            }
-            selected={this.state.selectedTab === item.title}
-            badge={1}
-            onPress={() => {
-              this.setState({
-                selectedTab: item.title,
-              });
-            }}
-            data-seed="logId"
-          >
-          </TabBar.Item>
-        ))}
-        </TabBar>
+      <div className={styles.tabbar}>
+        {
+          navtgation.map((item, index) => (
+            <div key={index}>
+            <a className={styles.tab} href={item.src}>
+            <img src={item.background}/>
+              <span>{item.title}</span>
+            </a>
+            </div>
+          ))
+        }
       </div>
     );
   }

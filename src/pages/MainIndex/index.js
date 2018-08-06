@@ -10,6 +10,7 @@ import HotContent from '../../component/HotContent';
 import { api, request, isIphoneX } from '../../api';
 import LimitRead from '../../component/LimitRead';
 import CicleNav from '../../component/CicleNav';
+import Tabbar from '../../component/Tabbar';
 
 const wx = require('weixin-js-sdk');
 
@@ -72,7 +73,7 @@ class App extends React.Component {
               <LimitRead></LimitRead>
               <HotContent ></HotContent>
                 <Noval></Noval>
-                {/* <Tabbar className={styles.tabbar} /> */}
+                <Tabbar />
               </div>
 
             </React.Fragment>
