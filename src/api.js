@@ -8,9 +8,12 @@ const api = {
   all: '/hjindex/index',
   freeRead: '/hjindex/free_list',
   week: '/hjindex/week_list',
+  icon: '/hjindex/banner_icon',
 };
 const request = axios.create({
   baseURL,
   timeout: 10000,
 });
-export { request, api };
+
+const isIphoneX = () => /iphone/gi.test(window.navigator.userAgent) && (window.screen.height === 812 && window.screen.width === 375);
+export { request, api, isIphoneX };

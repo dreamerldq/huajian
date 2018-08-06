@@ -7,11 +7,13 @@ import Lunbo from '../../component/Lunbo';
 import Noval from '../../component/Noval';
 import Recommond from '../../component/recommend';
 import HotContent from '../../component/HotContent';
-import { api, request } from '../../api';
+import { api, request, isIphoneX } from '../../api';
 import LimitRead from '../../component/LimitRead';
 import CicleNav from '../../component/CicleNav';
 
 const wx = require('weixin-js-sdk');
+
+console.log('是否是iphoneX', isIphoneX());
 
 class App extends React.Component {
   constructor(props) {

@@ -9,15 +9,19 @@
         height: Rem(345);
         .image{
             width: Rem(220);
-            height: Rem(290);
             display: flex;
             justify-content: center;
             align-content: center;
             flex-direction: column;
+            img{
+                width: Rem(220);
+                height: Rem(290);
+            }
             span{
                 text-align: center;
                 font-size: Rem(30);
                 color: #333333;
+                margin-top: Rem(7)
             }
         }
         img{
