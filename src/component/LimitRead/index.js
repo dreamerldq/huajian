@@ -3,7 +3,7 @@ import BannerTitle from '../BannerTitle';
 import { request, api } from '../../api';
 import styles from './index.scss';
 // import limitfree from '../../images/limitfree.png';
-
+const limitfree = 'https://novel.in.xintiaotime.com/public/static/cms/img/hj_limitfree.png';
 export default class HotContent extends React.Component {
   constructor(props) {
     super(props);
@@ -37,7 +37,7 @@ export default class HotContent extends React.Component {
                 <div className={styles.bookBlock}>
                 <div className={styles.image_group}>
                         <img className={styles.bookimg} src={`https://t3908.xintiaotime.com${item.image}`}></img>
-                        <img className={styles.limitfree} src="https://novel.in.xintiaotime.com/public/static/cms/img/hj_limitfree.png"></img>
+                        <img className={styles.limitfree} src={limitfree}></img>
                 </div>
 
                 <span className={styles.hotTitle}>{item.title}</span>

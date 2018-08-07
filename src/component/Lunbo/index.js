@@ -1,8 +1,8 @@
 import React from 'react';
 import { Carousel, WingBlank } from 'antd-mobile';
 import styles from './index.scss';
-// import img from '../../images/bannerBackground.png';
 
+const bannerBackground = 'https://novel.in.xintiaotime.com/public/static/cms/img/hj_bannerBackground.png';
 export default class Lunbo extends React.Component {
   constructor(props) {
     super(props);
@@ -37,7 +37,7 @@ export default class Lunbo extends React.Component {
 
         </ul>
       </div>
-        <img className={styles.bannerBackground} src="https://novel.in.xintiaotime.com/public/static/cms/img/hj_bannerBackground.png"/>
+        <img className={styles.bannerBackground} src={bannerBackground}/>
         <div className={styles.carousel}>
         <Carousel className="space-carousel"
           frameOverflow="hidden"

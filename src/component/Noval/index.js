@@ -6,8 +6,8 @@ import ViewType1 from './type1';
 import ViewType2 from './type2';
 import ViewType3 from './type3';
 import { request, api, isIphoneX } from '../../api';
-import novalBottom from '../../images/novalBottom.png';
-
+// import novalBottom from '../../images/novalBottom.png';
+const novalBottom = 'https://novel.in.xintiaotime.com/public/static/cms/img/hj_novalBottom.png';
 export default class Noval extends React.Component {
   constructor(props) {
     super(props);
@@ -54,7 +54,7 @@ export default class Noval extends React.Component {
                         </div>
                 ))}
               </div>
-              <a href="/noval.html"><img className={styles.moreRead} src="https://novel.in.xintiaotime.com/public/static/cms/img/hj_novalBottom.png"/></a>
+              <a href="/noval.html"><img className={styles.moreRead} src={novalBottom}/></a>
           </React.Fragment>
     );
   }
