@@ -63,7 +63,7 @@ export default class Lunbo extends React.Component {
 
         >
 
-          {(bannerData || []).map((val, index) => (
+          {(bannerData || [1, 2, 3]).map((val, index) => (
             <a
               key={val}
               href={`http://t2118.xintiaotime.com/index.php/cms/column/book/id/${val.id}.html`}

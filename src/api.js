@@ -6,6 +6,7 @@ const api = {
   noval: '/hjindex/jjkuaibao',
   recommend: '/jinjiang/jjhome',
   all: '/hjindex/index',
+  index: 'hjindex/indexlist',
   freeRead: '/hjindex/free_list',
   week: '/hjindex/week_list',
   icon: '/hjindex/banner_icon',
