@@ -1,12 +1,13 @@
 import { TabBar } from 'antd-mobile';
 import React from 'react';
 import styles from './index.scss';
+import { isIphoneX } from '../../api';
 
 const navtgation = [
   {
     background: 'https://novel.in.xintiaotime.com/public/static/cms/img/hj_index.png',
     title: '首页',
-    src: '',
+    src: 'http://t2118.xintiaotime.com/index.php/cms/index/index.html',
   },
   {
     background: 'https://novel.in.xintiaotime.com/public/static/cms/img/hj_book.png',
@@ -16,11 +17,12 @@ const navtgation = [
   {
     background: 'https://novel.in.xintiaotime.com/public/static/cms/img/hj_history.png',
     title: '历史记录',
+    src: 'http://t2118.xintiaotime.com/index.php/cms/user/readhistory.html',
   },
   {
     background: 'https://novel.in.xintiaotime.com/public/static/cms/img/hj_my.png',
     title: '个人中心',
-    src: 'http://t2118.xintiaotime.com/index.php/cms/user/login.html',
+    src: 'http://t2118.xintiaotime.com/index.php/cms/user/index.html',
   },
 ];
 export default class TabBarExample extends React.Component {
@@ -35,7 +37,7 @@ export default class TabBarExample extends React.Component {
 
   render() {
     return (
-      <div className={styles.tabbar}>
+      <div style={isIphoneX() ? { paddingBottom: '0.6rem' } : {}} className={styles.tabbar}>
         {
           navtgation.map((item, index) => (
             <div key={index}>

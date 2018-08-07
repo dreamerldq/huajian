@@ -5,7 +5,7 @@ import styles from './index.scss';
 import ViewType1 from './type1';
 import ViewType2 from './type2';
 import ViewType3 from './type3';
-import { request, api } from '../../api';
+import { request, api, isIphoneX } from '../../api';
 import novalBottom from '../../images/novalBottom.png';
 
 export default class Noval extends React.Component {
