@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script> -->
+    <script>
+        (function () {
+            let a = document.documentElement,
+                e;
+            c();
+            a.setAttribute("data-dpr", window.devicePixelRatio);
+            window.addEventListener("resize", b, false);
+            window.addEventListener("pageshow", function (f) {
+                f.persisted && b()
+            }, false);
+
+            function b() {
+                clearTimeout(e);
+                e = setTimeout(c, 300)
+            }
+
+            function c() {
+                var f = a.getBoundingClientRect().width;
+                if (f <= 750) {
+                    window.rem = a.getBoundingClientRect().width / 10
+                } else {
+                    window.rem = 75;
+                }
+                a.style.fontSize = window.rem + "px"
+            }
+        })();
+        // window.getArgs = function (strParame) {
+        //     var args = new Object();
+        //     var query;
+        //     if (arguments.length == 2)
+        //         query = arguments[1];
+        //     else
+        //         query = location.search.substring(1);
+
+        //     var pairs = query.split("&");
+        //     for (var i = 0; i < pairs.length; i++) {
+        //         var pos = pairs[i].indexOf('=');
+        //         if (pos == -1) continue;
+        //         var argname = pairs[i].substring(0, pos);
+        //         var value = pairs[i].substring(pos + 1);
+        //         value = decodeURIComponent(value);
+        //         args[argname] = value;
+        //     }
+        //     return args[strParame];
+        // }
+    </script>
+    <title>花卷小说</title>
+<link href="/index.css" rel="stylesheet"></head>
+
+<body>
+    <div style="width: 10rem; box-sizing: border-box; overflow-x: hidden;" id="app"></div>
+<script type="text/javascript" src="/index_bundle.js"></script></body>
+
+</html>

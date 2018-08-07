@@ -31,7 +31,7 @@ export default class ViewType1 extends React.Component {
                                             </div> : null
                                         }
                                         <div className={styles.readCount}>
-                                            {item.view}阅读
+                                            {item.read}阅读
                                         </div>
                                     </div>
                               </div>

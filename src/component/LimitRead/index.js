@@ -2,7 +2,7 @@ import React from 'react';
 import BannerTitle from '../BannerTitle';
 import { request, api } from '../../api';
 import styles from './index.scss';
-import limitfree from '../../images/limitfree.png';
+// import limitfree from '../../images/limitfree.png';
 
 export default class HotContent extends React.Component {
   constructor(props) {
@@ -37,7 +37,7 @@ export default class HotContent extends React.Component {
                 <div className={styles.bookBlock}>
                 <div className={styles.image_group}>
                         <img className={styles.bookimg} src={`https://t3908.xintiaotime.com${item.image}`}></img>
-                        <img className={styles.limitfree} src={limitfree}></img>
+                        <img className={styles.limitfree} src="https://novel.in.xintiaotime.com/public/static/cms/img/hj_limitfree.png"></img>
                 </div>
 
                 <span className={styles.hotTitle}>{item.title}</span>

@@ -54,7 +54,7 @@ export default class Noval extends React.Component {
                         </div>
                 ))}
               </div>
-              <a href="/noval.html"><img className={styles.moreRead} src={novalBottom}/></a>
+              <a href="/noval.html"><img className={styles.moreRead} src="https://novel.in.xintiaotime.com/public/static/cms/img/hj_novalBottom.png"/></a>
           </React.Fragment>
     );
   }

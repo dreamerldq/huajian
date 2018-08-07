@@ -1,7 +1,7 @@
 import React from 'react';
 import { Carousel, WingBlank } from 'antd-mobile';
 import styles from './index.scss';
-import img from '../../images/bannerBackground.png';
+// import img from '../../images/bannerBackground.png';
 
 export default class Lunbo extends React.Component {
   constructor(props) {
@@ -29,15 +29,15 @@ export default class Lunbo extends React.Component {
 
       <div className={styles.navbar}>
         <ul>
-          <a><li className={styles.yellowLi}>首页</li></a>
-          <a><li>书城</li></a>
-          <a><li>搜索</li></a>
-          <a><li>充值</li></a>
-          <a><li>个人中心</li></a>
+          <a href="http://t2118.xintiaotime.com/index.php/cms/index/index.html"><li className={styles.yellowLi}>首页</li></a>
+          <a href="http://t2118.xintiaotime.com/index.php/cms/column/index.html"><li>书城</li></a>
+          <a href="http://t2118.xintiaotime.com/index.php/cms/search/index.html"><li>搜索</li></a>
+          <a href="http://t2118.xintiaotime.com/index.php/cms/pay/index.html"><li>充值</li></a>
+          <a href="http://t2118.xintiaotime.com/index.php/cms/user/index.html"><li>个人中心</li></a>
 
         </ul>
       </div>
-        <img className={styles.bannerBackground} src={img}/>
+        <img className={styles.bannerBackground} src="https://novel.in.xintiaotime.com/public/static/cms/img/hj_bannerBackground.png"/>
         <div className={styles.carousel}>
         <Carousel className="space-carousel"
           frameOverflow="hidden"
