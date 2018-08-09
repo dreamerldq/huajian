@@ -1,26 +1,19 @@
 @import "../../common/style.scss";
-
-.am-carousel-wrap-dot span{
-    display: block;
-    width: 16px !important;
-    height: 8px !important;
-    margin: 0 3px  !important;
-    border-radius: 0 !important;
-  }
-  .novalHeader{
-      :global{
-        .am-list-view-scrollview-content{
-            .am-list{
-                .am-list-header{
-                    padding: 0;
-                }
+  :global{
+    .am-list-view-scrollview-content{
+        .am-list{
+            .am-list-header{
+                padding: 0;
             }
         }
-      
-      }
+    }
+  
   }
-.novel_block {
-    padding: Rem( 30);
+.list_container{
+    padding: 0 Rem(30);
+}
+.novel_content{
+    padding: Rem(30) 0;
     width: Rem(750);
     box-sizing: border-box;
 }
@@ -31,7 +24,6 @@
 }
 
 .novel_content {
-    border-bottom: 1px solid #F0F0F0;
     margin-bottom: Rem(30);
 }
 

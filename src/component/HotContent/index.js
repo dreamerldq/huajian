@@ -25,9 +25,10 @@ export default class HotContent extends React.Component {
 
 
   render() {
+    const { title } = this.props;
     return (
         <React.Fragment>
-        <BannerTitle title="本周热荐"></BannerTitle>
+      { title ? <BannerTitle title="本周热荐"></BannerTitle> : null}
           <div className={styles.container}>
               {
                   this.state.commendData.map((item, index) => (

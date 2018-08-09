@@ -55,7 +55,7 @@ class Noval extends React.Component {
 
   render() {
     const row = (rowData, rowID) => (
-        <div className={styles.novel_block}>
+        <div className={styles.novel_content}>
         <div className={styles.novel_item} key={rowData.id}>
                 {rowData.style === 1
                   ? <a href={`http://t2118.xintiaotime.com/index.php/cms/column/book/id/${rowData.id}.html`}><ViewType1 item={rowData}></ViewType1></a>
@@ -74,7 +74,7 @@ class Noval extends React.Component {
     );
     return (
             <React.Fragment>
-             <div className={styles.novalHeader}>
+             <div className={styles.list_container}>
              <ListView
               renderHeader={() =>  <BannerTitle title="小说快报" readMore={true}></BannerTitle>}
               renderFooter={() => (

@@ -5,11 +5,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const entryHtml = [
   'index',
   'noval',
+  'rank',
 ];
 const webpackConfig = {
   entry: {
     index: path.join(__dirname, '/src/pages/MainIndex/index.js'),
     noval: path.join(__dirname, '/src/pages/Noval/index.js'),
+    rank: path.join(__dirname, '/src/pages/Rank/index.js'),
   },
   output: {
     path: path.join(__dirname, 'dist'),

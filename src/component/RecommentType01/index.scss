@@ -3,7 +3,7 @@
   .rank_container{
       background: #fff;
       margin-bottom:Rem(20);
-      width: Rem(750);
+      // width: Rem(750);
   }
   .bottomIntro{ 
       position: absolute;
@@ -43,13 +43,13 @@
   .article_container{
     display: flex;
       height: Rem(284);
-      width: Rem(750);
+      // width: Rem(750);
       align-items: center;
       padding: 0Rem(20);
       box-sizing: border-box;
   }
   .article_texts{
-    width: Rem(506);
+   flex: 1;
     flex-direction: column;
     display: flex;
     height: Rem(200);
@@ -80,7 +80,7 @@
     white-space: pre-wrap;
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
-    width: Rem(506);
+    // width: Rem(506);
     display: -webkit-box;
     -webkit-box-orient: vertical;  }
 

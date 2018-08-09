@@ -71,7 +71,7 @@ class App extends React.Component {
               <CicleNav></CicleNav>
               <Recommond zhubianData={this.state.allData.zhubian_list} count={this.state.allData.count}></Recommond>
               <LimitRead></LimitRead>
-              <HotContent ></HotContent>
+              <HotContent title={true} ></HotContent>
                 <Noval></Noval>
                 <Tabbar />
               </div>
