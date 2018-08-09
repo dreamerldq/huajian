@@ -14,7 +14,14 @@
     }
 }
 .hotTitle{
-    margin-top: Rem(7)
+    margin-top: Rem(7);
+    width: Rem(220);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-align: center;
 }
 .limit_container{
     width: Rem(750);

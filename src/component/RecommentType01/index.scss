@@ -51,7 +51,8 @@
   .article_texts{
     width: Rem(506);
     flex-direction: column;
-    height: Rem(240);
+    display: flex;
+    height: Rem(200);
     position: relative;
   }
   .article_type{
