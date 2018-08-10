@@ -42,14 +42,12 @@
     margin:  Rem(20) 0;
   }
   .am-tabs-default-bar-left .am-tabs-default-bar-underline{
-   right: inherit;
-    left: 0;
-  }
-  .am-tabs-default-bar-underline{
-    border: 2px solid  #FE5151
+   right: inherit !important;
+    left: 0 !important;
+    border: 2px solid  #FE5151 !important;
   }
   .am-tabs-default-bar-tab-active{
-    color: #FE5151;
+    color: #FE5151 !important;
   }
   .am-tabs-vertical .am-tabs-tab-bar-wrap{
     // height: auto !important;
@@ -64,12 +62,12 @@
     box-sizing: content-box;
   }
   .am-tabs-default-bar{
-    height: auto;
+    height: auto !important;
     margin-top: Rem(70);
    
   }
   .am-tabs-default-bar{
-    width: Rem(130);
+    width: Rem(130) !important;
     background: #ffffff !important;
    
   }
