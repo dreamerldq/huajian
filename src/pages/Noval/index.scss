@@ -10,10 +10,12 @@
   
   }
 .list_container{
-    padding: 0 Rem(30);
+    // padding: 0 Rem(30);
+    margin-top: Rem(20)
 }
-.novel_content{
-    padding: Rem(30) 0;
+.novel_item{
+    padding: 0 Rem(30);
+    margin-bottom: Rem(30);
     width: Rem(750);
     box-sizing: border-box;
 }
@@ -23,11 +25,7 @@
     margin-top: Rem(-20);
 }
 
-.novel_content {
-    margin-bottom: Rem(30);
-}
-
-.novel_content .title {
+.novel_item .title {
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;

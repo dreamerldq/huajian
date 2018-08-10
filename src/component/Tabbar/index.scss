@@ -16,10 +16,12 @@
         align-items: center;
         img{
             width: Rem(59);
-            height: Rem(59)
+            height: Rem(59);
+           
         }
         span{
             color: #333333;
+            font-size: Rem(9);
         }
     }
 }

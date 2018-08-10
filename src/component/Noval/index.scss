@@ -1,6 +1,6 @@
 @import "../../common/style.scss";
 .novel_block {
-    padding: Rem( 30);
+    padding: Rem(20) Rem(20) 0 Rem(20) ;
     width: Rem(750);
     box-sizing: border-box;
     background: #F9F9F9;
@@ -8,6 +8,7 @@
 .moreRead{
     width: Rem(750);
     height: Rem(173);
+    margin-top: Rem(-30);
     padding-bottom: Rem(98)
 }
 

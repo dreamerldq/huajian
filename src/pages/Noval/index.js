@@ -4,7 +4,8 @@ import { ListView } from 'antd-mobile';
 import ViewType1 from '../../component/Noval/type1';
 import ViewType2 from '../../component/Noval/type2';
 import ViewType3 from '../../component/Noval/type3';
-import styles from '../../component/Noval/index.scss';
+// import styles from '../../component/Noval/index.scss';
+import styles from './index.scss'
 import {request, api} from '../../api'
 import BannerTitle from '../../component/BannerTitle'
 class Noval extends React.Component {
