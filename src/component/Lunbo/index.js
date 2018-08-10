@@ -8,7 +8,7 @@ export default class Lunbo extends React.Component {
     super(props);
     this.state = {
       data: ['1', '2', '3'],
-      imgHeight: '4rem',
+      imgHeight: '3.6rem',
     };
   }
 
@@ -41,8 +41,8 @@ export default class Lunbo extends React.Component {
         <div className={styles.carousel}>
         <Carousel className="space-carousel"
           frameOverflow="hidden"
-          // cellSpacing={5}
-          // slideWidth={0.95}
+          cellSpacing={5}
+          slideWidth={0.9}
           autoplay
           infinite
           beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
@@ -65,7 +65,7 @@ export default class Lunbo extends React.Component {
 
           {(bannerData || [1, 2, 3]).map((val, index) => (
             <a
-              key={val}
+              key={index}
               href={`http://t2118.xintiaotime.com/index.php/cms/column/book/id/${val.id}.html`}
               style={{
                 display: 'block',
@@ -79,11 +79,11 @@ export default class Lunbo extends React.Component {
                 src={`https://t3908.xintiaotime.com${val.image}`}
                 alt=""
                 className={styles.image}
-                // onLoad={() => {
-                //   // fire window resize event to change height
-                //   window.dispatchEvent(new Event('resize'));
-                //   // this.setState({ imgHeight: '4rem' });
-                // }}
+                onLoad={() => {
+                  // fire window resize event to change height
+                  window.dispatchEvent(new Event('resize'));
+                  this.setState({ imgHeight: '3.6rem' });
+                }}
               />
             </a>
           ))}
