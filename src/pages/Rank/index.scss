@@ -19,8 +19,10 @@
     .goback{
       position: absolute;
       left: Rem(34);
-      font-weight: 600;
-      font-size: Rem(40)
+      img{
+        width: Rem(40);
+        height: Rem(40);
+      }
     }
     // margin-bottom: Rem(97)
     span{
@@ -30,7 +32,7 @@
 
 }
 .book_container{
-  margin-left: Rem(130);
+  margin-left: Rem(157);
   overflow-x: hidden;
   
 }
