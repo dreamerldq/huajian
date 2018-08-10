@@ -25,7 +25,8 @@ export default class HotContent extends React.Component {
   render() {
     return (
         <React.Fragment>
-        <BannerTitle url="http://t2118.xintiaotime.com/index.php/cms/column/bookfree.html" title="限时免费">
+          <div className={styles.limitFreeContainer}>
+          <BannerTitle url="http://t2118.xintiaotime.com/index.php/cms/column/bookfree.html" title="限时免费">
             更多>
         </BannerTitle>
         <div className={styles.limit_container}>
@@ -49,6 +50,8 @@ export default class HotContent extends React.Component {
                 ))
             }
              </div>
+          </div>
+
         </React.Fragment>
 
     );

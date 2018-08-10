@@ -41,11 +41,14 @@
       margin-right:Rem(24);
   }
   .article_container{
-    display: flex;
+      display: flex;
       height: Rem(284);
-      // width: Rem(750);
+     
       align-items: center;
       box-sizing: border-box;
+  }
+  .rank_article{
+    border-bottom: 1px solid #F0F0F0;
   }
   .article_texts{
    flex: 1;

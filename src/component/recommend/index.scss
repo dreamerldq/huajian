@@ -2,11 +2,11 @@
 @import "../../common/style.scss";
   .recommend {
     width: Rem(750);
-    margin-bottom: Rem(20);
     background: #fff;
     .images{
         width: Rem(750);
         height: Rem(345);
+        margin-bottom: Rem(27);
         .image{
             width: Rem(220);
             display: flex;

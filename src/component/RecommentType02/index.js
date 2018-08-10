@@ -13,9 +13,10 @@ export default class ReconmmentType02 extends React.Component {
   }
 
   render() {
-    const { item, index } = this.props;
+    const { item, index, last } = this.props;
+    console.log('QQQQQQ', index, last);
     return (
-        <div className={styles.rank_article}>
+        <div style={index === last ? { borderBottom: '0' } : { borderBottom: '1px solid #f0f0f0' }} className={styles.rank_article}>
             <div className={styles.article_container} key={item.id}>
                 <img className={styles.article_image} src={`https://t3908.xintiaotime.com${item.image}`}></img>
                 <div className={styles.article_texts}>

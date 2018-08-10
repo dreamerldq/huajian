@@ -8,9 +8,10 @@ export default class Recommend extends React.Component {
   }
 
   render() {
-    const { item } = this.props;
+    const { item, last, index } = this.props;
+    console.log('QQQQQQQQ', last, index);
     return (
-        <div className={styles.rank_article}>
+        <div style={index === last ? { borderBottom: '0' } : { borderBottom: '1px solid #f0f0f0' }} className={styles.rank_article}>
             <div className={styles.article_container} key={item.id}>
                 <img className={styles.article_image} src={`https://t3908.xintiaotime.com${item.image}`}></img>
                 <div className={styles.article_texts}>

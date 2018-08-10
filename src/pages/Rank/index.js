@@ -46,7 +46,7 @@ class Rank extends React.Component {
           >
             <div className={styles.book_container}>
              {this.state.rankData.map((item, index  ) =>{
-               return <RankList index={index+1} key={item.id} item={item}></RankList>
+               return <RankList last={this.state.rankData.length} index={index+1} key={item.id} item={item}></RankList>
              })}
             </div>
             <div className={styles.book_container}>新书榜</div>
