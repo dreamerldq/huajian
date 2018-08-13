@@ -40,7 +40,7 @@ export default class TabBarExample extends React.Component {
       <div style={isIphoneX() ? { paddingBottom: '0.6rem' } : {}} className={styles.tabbar}>
         {
           navtgation.map((item, index) => (
-            <div key={index}>
+            <div className={styles.iconBar} key={index}>
             <a className={styles.tab} href={item.src}>
             <img src={item.background}/>
               <span>{item.title}</span>

@@ -28,7 +28,8 @@ export default class HotContent extends React.Component {
     const { title } = this.props;
     return (
         <React.Fragment>
-      { title ? <BannerTitle title="本周热荐"></BannerTitle> : null}
+          <div className={styles.hot_container}>
+          { title ? <BannerTitle title="本周热荐"></BannerTitle> : null}
           <div className={styles.container}>
               {
                   this.state.commendData.map((item, index) => (
@@ -38,6 +39,7 @@ export default class HotContent extends React.Component {
 
                   ))
               }
+          </div>
           </div>
         </React.Fragment>
 

@@ -8,7 +8,7 @@
 
 }
 .limitFreeContainer{
-    margin-top: Rem(-15)
+    margin-top: Rem(-10);
 }
 .limit_book{
     a{
@@ -28,8 +28,9 @@
 }
 .limit_container{
     width: Rem(750);
-    height: Rem(750);
+    height: Rem(700);
     display: flex;
+    margin-top: Rem(4);
     flex-wrap: wrap;
     justify-content: space-around;
     font-size:Rem( 32);

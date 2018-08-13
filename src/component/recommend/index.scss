@@ -6,6 +6,8 @@
     .images{
         width: Rem(750);
         height: Rem(345);
+        box-sizing: border-box;
+        padding: 0 Rem(20) 0 Rem(20);
         margin-bottom: Rem(27);
         .image{
             width: Rem(220);

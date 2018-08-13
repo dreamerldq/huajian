@@ -8,7 +8,7 @@ export default class Lunbo extends React.Component {
     super(props);
     this.state = {
       data: ['1', '2', '3'],
-      imgHeight: '3.6rem',
+      imgHeight: '3.4rem',
     };
   }
 
@@ -41,8 +41,8 @@ export default class Lunbo extends React.Component {
         <div className={styles.carousel}>
         <Carousel className="space-carousel"
           frameOverflow="hidden"
-          cellSpacing={5}
-          slideWidth={0.9}
+          cellSpacing={10}
+          slideWidth={0.85}
           autoplay
           infinite
           beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
@@ -82,7 +82,7 @@ export default class Lunbo extends React.Component {
                 onLoad={() => {
                   // fire window resize event to change height
                   window.dispatchEvent(new Event('resize'));
-                  this.setState({ imgHeight: '3.6rem' });
+                  this.setState({ imgHeight: '3.4rem' });
                 }}
               />
             </a>

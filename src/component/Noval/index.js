@@ -33,7 +33,8 @@ export default class Noval extends React.Component {
   render() {
     return (
           <React.Fragment>
-              <BannerTitle url="/noval.html" title="小说快报">
+            <div className={styles.noval_container}>
+            <BannerTitle url="/noval.html" title="小说快报">
                     更多>
               </BannerTitle>
               <div className={styles.novel_block}>
@@ -55,6 +56,8 @@ export default class Noval extends React.Component {
                 ))}
               </div>
               <a href="/noval.html"><img className={styles.moreRead} src={novalBottom}/></a>
+            </div>
+
           </React.Fragment>
     );
   }

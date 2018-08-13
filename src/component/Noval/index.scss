@@ -1,6 +1,6 @@
 @import "../../common/style.scss";
 .novel_block {
-    padding: Rem(20) Rem(20) 0 Rem(20) ;
+    padding: Rem(30) Rem(20) 0 Rem(20) ;
     width: Rem(750);
     box-sizing: border-box;
     background: #F9F9F9;
@@ -21,7 +21,9 @@
     border-bottom: 1px solid #F0F0F0;
     margin-bottom: Rem(30);
 }
-
+.noval_container{
+    // margin-top: Rem(-15)
+}
 .novel_content .title {
     overflow: hidden;
     text-overflow: ellipsis;

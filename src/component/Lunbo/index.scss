@@ -10,6 +10,9 @@
 .bannerBackground{
     width: Rem(750);
     height: Rem(421);
+    position: relative;
+    top: Rem(-20);
+    z-index: 0;
 }
 
 .topContainer{
@@ -17,6 +20,7 @@
     .navbar{
         position: absolute;
         top: 0;
+        z-index: 10;
         height: Rem(90);
         width: Rem(750);
         ul{
@@ -45,9 +49,9 @@
     }
     .carousel{
         position: absolute;
-        top: Rem(113);
+        top: Rem(140);
         width: Rem(750);
-        height: Rem(300);
+        height: Rem(255);
     }
     .spaceCarousel {
         padding: 16px;
@@ -57,5 +61,5 @@
 }
 .image{
     width: 100%;
-    height: Rem(270);
+    height: Rem(255);
 }
