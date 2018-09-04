@@ -2,20 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const entryHtml = [
-  'index',
-  'noval',
-  'rank',
-];
 const webpackConfig = {
-  entry: {
-    index: path.join(__dirname, '/src/pages/MainIndex/index.js'),
-    noval: path.join(__dirname, '/src/pages/Noval/index.js'),
-    rank: path.join(__dirname, '/src/pages/Rank/index.js'),
-  },
+  entry: path.join(__dirname, '/src/index.js'),
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name]_bundle.js',
+    filename: 'bundle.js',
     publicPath: '/',
   },
   module: {
@@ -48,7 +39,11 @@ const webpackConfig = {
 
     ],
   },
-  plugins: [],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'public/index.html'),
+    }),
+  ],
   resolve: {
     extensions: ['.js', '.jsx', 'less', 'css'],
   },
@@ -57,13 +52,5 @@ const webpackConfig = {
     historyApiFallback: true,
   },
 };
-entryHtml.forEach((name) => {
-  const plugin = new HtmlWebpackPlugin({
-    filename: `${name}.html`,
-    template: path.join(__dirname, 'public/index.html'),
-    inject: true,
-    chunks: [name],
-  });
-  webpackConfig.plugins.push(plugin);
-});
+
 module.exports = webpackConfig;
