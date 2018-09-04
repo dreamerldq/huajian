@@ -1,22 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './index.scss';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Provider } from 'mobx-react';
+import indexState from './Model/index';
+import MainIndex from './Route/MainIndex.jsx';
+
+const store = {
+  indexState,
+};
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: 'lidanqiu',
-    };
-  }
-
-
   render() {
     return (
-            <div className={styles.container}>
-              <h1>Hello World</h1>
-              <span>{this.state.name}</span>
-            </div>
+            <Provider {...store}>
+            <Router>
+                <Route path="/" component={MainIndex}/>
+            </Router>
+        </Provider>
     );
   }
 }

@@ -5,6 +5,7 @@
     ],
     "plugins": [
       "transform-class-properties",
-      ["import", { "libraryName": "antd-mobile", "style": "css" }]
+      ["import", { "libraryName": "antd", "style": "css" }],
+      "transform-decorators-legacy"
     ]
 }
