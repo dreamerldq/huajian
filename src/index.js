@@ -1,23 +1,32 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Provider } from 'mobx-react';
-import indexState from './Model/index';
-import MainIndex from './Route/MainIndex.jsx';
+import dva, { connect } from 'dva';
 
-const store = {
-  indexState,
-};
+// 1. Initialize
+const app = dva();
+// 2. Model
+app.model({
+  namespace: 'count',
+  state: 0,
+  reducers: {
+    add(count) { return count + 1; },
+    minus(count) { return count - 1; },
+  },
+});
 
-class App extends React.Component {
-  render() {
-    return (
-            <Provider {...store}>
-            <Router>
-                <Route path="/" component={MainIndex}/>
-            </Router>
-        </Provider>
-    );
-  }
-}
-ReactDOM.render(<App/>, document.getElementById('app'));
+
+// 3. View
+const App = connect(({ count }) => ({
+  count,
+}))(props => (
+    <div>
+      <h2>{ props.count }</h2>
+      <button key="add" onClick={() => { props.dispatch({ type: 'count/add' }); }}>+</button>
+      <button key="minus" onClick={() => { props.dispatch({ type: 'count/minus' }); }}>-</button>
+    </div>
+));
+
+// 4. Router
+app.router(() => <App />);
+
+// 5. Start
+app.start('#app');
