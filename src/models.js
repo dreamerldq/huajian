@@ -1,6 +1,6 @@
-import count from './Model/count';
-import hello from './Model/hello';
+
+import invoice from './Model/invoice';
 
 export default [
-  hello, count,
+  invoice,
 ];
