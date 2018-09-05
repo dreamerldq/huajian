@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'dva';
 import { Button } from 'antd';
 
-class Index extends React.Component {
+class ApplyInvoiceList extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -10,9 +10,9 @@ class Index extends React.Component {
   render() {
     return (
       <div>
-       <h1>首页</h1>
+       <h1>申请列表</h1>
       </div>
     );
   }
 }
-export default Index;
+export default connect()(ApplyInvoiceList);
