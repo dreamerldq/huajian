@@ -1,32 +1,16 @@
 import React from 'react';
-import dva, { connect } from 'dva';
-
+import dva from 'dva';
+import App from './App';
+import models from './models';
 // 1. Initialize
 const app = dva();
 // 2. Model
-app.model({
-  namespace: 'count',
-  state: 0,
-  reducers: {
-    add(count) { return count + 1; },
-    minus(count) { return count - 1; },
-  },
+models.forEach((model) => {
+  app.model(model);
 });
 
-
-// 3. View
-const App = connect(({ count }) => ({
-  count,
-}))(props => (
-    <div>
-      <h2>{ props.count }</h2>
-      <button key="add" onClick={() => { props.dispatch({ type: 'count/add' }); }}>+</button>
-      <button key="minus" onClick={() => { props.dispatch({ type: 'count/minus' }); }}>-</button>
-    </div>
-));
-
 // 4. Router
-app.router(() => <App />);
+app.router(App);
 
 // 5. Start
 app.start('#app');
