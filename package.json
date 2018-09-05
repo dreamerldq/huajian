@@ -1,18 +1,18 @@
 {
-  "name": "huikanshu-h5",
+  "name": "huajian",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.prod.js",
-    "dev": "webpack-dev-server --open --config webpack.dev.js"
+    "dev": "webpack-dev-server --open --config webpack.dev.js",
+    "electron": "electron .",
+    "package": "electron-packager . MyFirstElectronApp  --platform=mas --arch=all --out ~/Desktop --electron-version=2.0.8"
   },
-  "author": "",
+  "author": "dreamerldq",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
@@ -50,6 +50,8 @@
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "dva": "^2.4.0",
+    "electron": "^2.0.8",
+    "electron-packager": "^12.1.1",
     "mobx": "^5.1.0",
     "mobx-react": "^5.2.6",
     "react": "^16.4.1",
