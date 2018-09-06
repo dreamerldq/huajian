@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
-import { Button } from 'antd';
+import { Table } from 'antd';
+import { dataSource, columns } from './data';
 
 class ApplyInvoiceList extends React.Component {
   constructor(props) {
@@ -9,9 +10,11 @@ class ApplyInvoiceList extends React.Component {
 
   render() {
     return (
-      <div>
-       <h1>申请列表</h1>
-      </div>
+      <Table
+       dataSource={dataSource}
+       columns={columns}
+       bordered
+       rowKey={record => record.id}/>
     );
   }
 }
