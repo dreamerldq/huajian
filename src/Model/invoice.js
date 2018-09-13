@@ -1,28 +1,48 @@
 
-import { asyncInvoice } from '../Servers/invoice';
+// import pathToRegexp from 'path-to-regexp';
+import { apply_invoice, get_invoice as get_invoices } from '../Servers/invoice';
 
 export default {
   namespace: 'invoice',
   state: {
-    invoice_type: '普通发票',
+    invoice_type: '',
     invoice_money: '',
-    principal: 'llp',
+    principal: '',
+    invoices: [],
+  },
+  subscriptions: {
+    setup({ dispatch, history }) {
+      return history.listen(({ pathname }) => {
+        // /posts
+        if (pathname === '/apply_invoice_list') {
+          dispatch({ type: 'get_invoice' });
+        }
+      //   // /posts/:key
+      //   const match = pathToRegexp('/posts/:key').exec(pathname);
+      //   if (match) {
+      //     dispatch({ type: 'fetchPost', payload: match[1] });
+      //   }
+      });
+    },
   },
   reducers: {
     getInvoice(state, { payload }) {
-      const { invoice_money, invoice_type, principal } = payload;
       return {
-        ...state, invoice_money, invoice_type, principal,
+        ...state, invoices: payload,
       };
     },
   },
   effects: {
-    * fetchName({ payload }, { call, put }) {
-      const data = yield call(asyncInvoice);
+    * get_invoice({ payload }, { call, put }) {
+      const data = yield call(get_invoices);
+      console.log('AAAA', data);
       yield put({
         type: 'getInvoice',
         payload: data,
       });
+    },
+    * create_voice({ payload }, { call, put }) {
+      const data = yield call(apply_invoice, payload);
     },
   },
 };

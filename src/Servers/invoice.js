@@ -1,10 +1,11 @@
-const asyncInvoice = () => new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve({
-      invoice_type: '普通',
-      invoice_money: 200,
-      principal: 'llp',
-    });
-  }, 200);
-});
-export { asyncInvoice };
+import { request_get, request_post } from '../../utils/api';
+
+async function apply_invoice(config) {
+  await request_post('invoice/create', config);
+}
+async function get_invoice() {
+  const data = await request_get('invoice/');
+  return data.data.data;
+}
+
+export { apply_invoice, get_invoice };

@@ -9,13 +9,13 @@ const columns = [{
   key: 'company_name',
 }, {
   title: '金额',
-  dataIndex: 'invoice_money',
-  key: 'invoice_money',
+  dataIndex: 'money',
+  key: 'money',
 },
 {
   title: '纳税人识别号',
-  dataIndex: 'person_id',
-  key: 'person_id',
+  dataIndex: 'taxpayer_id',
+  key: 'taxpayer_id',
 },
 {
   title: '地址',
@@ -23,8 +23,8 @@ const columns = [{
   key: 'address',
 }, {
   title: '电话',
-  dataIndex: 'telphone',
-  key: 'telphone',
+  dataIndex: 'phone_number',
+  key: 'phone_number',
 },
 {
   title: '开户行',
@@ -38,8 +38,8 @@ const columns = [{
 },
 {
   title: '项目负责人',
-  dataIndex: 'principal',
-  key: 'principal',
+  dataIndex: 'project_principle',
+  key: 'project_principle',
 },
 {
   title: '发票类型',
@@ -65,12 +65,12 @@ const data = {
   project_name: 'llp',
   company_name: 32,
   address: '西湖区湖底公园1号',
-  invoice_money: 500,
-  person_id: 1,
-  telphone: 122,
+  money: 500,
+  taxpayer_id: 1,
+  phone_number: 122,
   bank: '招商',
   bank_user: 'qqqq',
-  principal: 'qqqq',
+  project_principle: 'qqqq',
   invoice_type: 'qqqq',
   states: 1,
   time: '2018',

@@ -5,18 +5,23 @@ import formData from './data'
 const FormItem = Form.Item;
 const {Option} = Select
 import styles from './index.scss'
-
+function hasErrors(fieldsError) {
+  return Object.keys(fieldsError).some(field => fieldsError[field]);
+}
 class ApplyInvoice extends React.Component{
   constructor(props){
     super(props)
     this.state = {
       invoice_type: this.props.invoice.invoice_type
     }
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
-  handleSubmit = (e) => {
+  handleSubmit(e) {
+    console.log("SSSSSS", e)
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
+        this.props.dispatch({type:'invoice/create_voice', payload: values})
         console.log('Received values of form: ', values);
       }
     });
@@ -27,7 +32,8 @@ class ApplyInvoice extends React.Component{
     })
   }
   render(){
-    const { getFieldDecorator } = this.props.form;
+    console.log("LLLLLL", this.props)
+    const { getFieldDecorator, getFieldsError } = this.props.form;
     const {invoice}  = this.props
     return (
       <Form onSubmit={this.handleSubmit} className="login-form">
@@ -98,9 +104,15 @@ class ApplyInvoice extends React.Component{
              break;
           }
         })}
-        <Button onSubmit={this.handleSubmit}>
+        <FormItem>
+          <Button
+            type="primary"
+            htmlType="submit"
+            disabled={hasErrors(getFieldsError())}
+          >
             创建表单
-        </Button>
+          </Button>
+        </FormItem>
       </Form>
     )
   }

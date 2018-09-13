@@ -9,13 +9,17 @@ class ApplyInvoiceList extends React.Component {
   }
 
   render() {
+    console.log('wwwww', this.props);
     return (
       <Table
-       dataSource={dataSource}
+       dataSource={this.props.invoice.invoices}
        columns={columns}
        bordered
        rowKey={record => record.id}/>
     );
   }
 }
-export default connect()(ApplyInvoiceList);
+const mapStateToProps = ({ invoice }) => ({
+  invoice,
+});
+export default connect(mapStateToProps)(ApplyInvoiceList);

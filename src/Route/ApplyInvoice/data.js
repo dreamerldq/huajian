@@ -11,13 +11,13 @@ const formData = [
   },
   {
     type: 'input',
-    form_name: 'invoice_money',
+    form_name: 'money',
     required: true,
     name: '金额',
   },
   {
     type: 'input',
-    form_name: 'principal',
+    form_name: 'project_principle',
     required: true,
     name: '负责人',
 
@@ -38,20 +38,13 @@ const formData = [
   },
   {
     type: 'input',
-    form_name: 'project_name',
-    required: true,
-    name: '项目名称',
-
-  },
-  {
-    type: 'input',
-    form_name: 'person_id',
+    form_name: 'taxpayer_id',
     required: true,
     name: '识别号',
   },
   {
     type: 'input',
-    form_name: 'telphone',
+    form_name: 'phone_number',
     required: true,
     name: '电话',
     relevant_invoice_type: true,
