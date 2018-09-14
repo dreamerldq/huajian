@@ -4,8 +4,8 @@ async function apply_invoice(config) {
   await request_post('invoice/create', config);
 }
 async function get_invoice() {
-  const data = await request_get('invoice/');
-  return data.data.data;
+  const { data } = await request_get('invoice/');
+  return data;
 }
 
 export { apply_invoice, get_invoice };
