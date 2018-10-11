@@ -1,6 +1,8 @@
 
 // import pathToRegexp from 'path-to-regexp';
-import { apply_invoice, get_invoice as get_invoices } from '../Servers/invoice';
+import {
+  apply_invoice, get_invoice as get_invoices, delete_invoice, update_state,
+} from '../Servers/invoice';
 
 export default {
   namespace: 'invoice',
@@ -35,7 +37,6 @@ export default {
   effects: {
     * get_invoice({ payload }, { call, put }) {
       const data = yield call(get_invoices);
-      console.log('AAAA', data);
       yield put({
         type: 'getInvoice',
         payload: data,
@@ -43,6 +44,12 @@ export default {
     },
     * create_voice({ payload }, { call, put }) {
       const data = yield call(apply_invoice, payload);
+    },
+    * delete_voice({ payload }, { call, put }) {
+      const data = yield call(delete_invoice, payload);
+    },
+    * update_state({ payload }, { call, put }) {
+      const data = yield call(update_state, payload);
     },
   },
 };

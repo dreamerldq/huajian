@@ -54,6 +54,7 @@
     "electron-packager": "^12.1.1",
     "mobx": "^5.1.0",
     "mobx-react": "^5.2.6",
+    "moment": "^2.22.2",
     "path-to-regexp": "^2.4.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",

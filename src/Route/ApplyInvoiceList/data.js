@@ -45,15 +45,6 @@ const columns = [{
   title: '发票类型',
   dataIndex: 'invoice_type',
   key: 'invoice_type',
-}, {
-  title: '状态',
-  dataIndex: 'states',
-  key: 'states',
-},
-{
-  title: '时间',
-  dataIndex: 'time',
-  key: 'time',
 },
 {
   title: '备注',

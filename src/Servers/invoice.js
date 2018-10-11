@@ -3,6 +3,12 @@ import { request_get, request_post } from '../../utils/api';
 async function apply_invoice(config) {
   await request_post('invoice/create', config);
 }
+async function delete_invoice(config) {
+  await request_post('invoice/delete_invoice', config);
+}
+async function update_state(config) {
+  await request_post('invoice/update_state', config);
+}
 async function get_invoice() {
   const { data } = await request_get('invoice/');
   return data;
@@ -10,4 +16,6 @@ async function get_invoice() {
 async function affirm_invoice(config) {
   await request_post('invoice/affirmInvoice', config);
 }
-export { apply_invoice, get_invoice };
+export {
+  apply_invoice, get_invoice, delete_invoice, update_state,
+};
