@@ -7,6 +7,7 @@ import AppHeader from './Component/Header/index';
 import BasicContent from './Route/BasicContent/index.jsx';
 import Login from './Route/Login/index.jsx';
 import User from './Route/User/index.jsx';
+import AffirmInvoice from './Route/AffirmInvoice/index.jsx';
 import styles from './index.scss';
 
 const {
@@ -29,6 +30,7 @@ const App = ({ history }) => (
               <Route path="/apply_invoice_list" component={ApplyInvoiceList} />
               <Route path="/basic_content" component={BasicContent}></Route>
               <Route path="/create_user" component={User}/>
+              <Route path="/affirm_invoice" component={AffirmInvoice}/>
               </Switch>
              </Router>
           </Content>
