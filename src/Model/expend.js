@@ -1,7 +1,7 @@
 
 // import pathToRegexp from 'path-to-regexp';
 import {
-  expend_apply, expend_apply_list,
+  create_expend, expend_list,
 } from '../Servers/expend';
 
 export default {
@@ -33,14 +33,14 @@ export default {
   },
   effects: {
     * get_expend_list({ payload }, { call, put }) {
-      const data = yield call(expend_apply_list);
+      const data = yield call(expend_list);
       yield put({
         type: 'getInvoice',
         payload: data,
       });
     },
     * create_expend({ payload }, { call, put }) {
-      const data = yield call(expend_apply, payload);
+      const data = yield call(create_expend, payload);
     },
     // * delete_voice({ payload }, { call, put }) {
     //   const data = yield call(delete_invoice, payload);

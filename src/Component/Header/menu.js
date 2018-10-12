@@ -4,11 +4,15 @@ const menus = [
     name: '发票申请',
   },
   {
+    key: 'expend_apply',
+    name: '支出申请',
+  },
+  {
     key: 'apply_invoice_list',
     name: '发票申请列表',
   },
   {
-    key: 'expend_list',
+    key: 'expend_apply_list',
     name: '支出申请列表',
   },
   {
@@ -16,7 +20,7 @@ const menus = [
     name: '应收账单',
   },
   {
-    key: 'financial_statistics',
+    key: 'financial_statistic',
     name: '财务统计',
   },
 ];
