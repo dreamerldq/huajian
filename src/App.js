@@ -9,6 +9,7 @@ import Login from './Route/Login/index.jsx';
 import User from './Route/User/index.jsx';
 import AffirmInvoice from './Route/AffirmInvoice/index.jsx';
 import AffirmInvoiceList from './Route/AffirmInvoiceList';
+import ExpendApply from './Route/ExpendApply';
 import styles from './index.scss';
 
 const {
@@ -33,6 +34,7 @@ const App = ({ history }) => (
               <Route path="/create_user" component={User}/>
               <Route path="/affirm_invoice/:id" component={AffirmInvoice}/>
               <Route path="/affirm_invoice_list" component={AffirmInvoiceList}/>
+              <Route path="/expend_apply" component={ExpendApply}/>
               </Switch>
              </Router>
           </Content>
