@@ -4,6 +4,7 @@ import { connect } from 'dva'
 import { routerRedux } from 'dva/router';
 const FormItem = Form.Item;
 import styles from './index.scss'
+import { ENGINE_METHOD_DIGESTS } from 'constants';
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some(field => fieldsError[field]);
 }
@@ -11,7 +12,6 @@ class AffirmInvoice extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      invoice_type: this.props.invoice.invoice_type
     }
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -19,8 +19,9 @@ class AffirmInvoice extends React.Component{
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        this.props.dispatch({type:'affirmInvoice/create_voice', payload: values})
-        console.log('实收金额: ', values);
+        const {id} = this.props.affirmInvoice
+        this.props.dispatch({type:'affirmInvoice/create_affirmIvoice', payload: {...values,id}})
+        console.log('实收金额: ', {...values,id});
       }
     });
   }
@@ -31,7 +32,8 @@ class AffirmInvoice extends React.Component{
   }
   render(){
     const { getFieldDecorator, getFieldsError } = this.props.form;
-    const {invoice}  = this.props
+    const {affirmInvoice}  = this.props
+
     return (
       <Form onSubmit={this.handleSubmit} className="login-form">
       <FormItem>
@@ -41,6 +43,7 @@ class AffirmInvoice extends React.Component{
               <Input 
                   prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} 
                   type="text"
+                  placeholder="实收金额"
                 >
                 </Input>
             )}
@@ -52,6 +55,7 @@ class AffirmInvoice extends React.Component{
               <Input 
                   prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} 
                   type="text"
+                  placeholder="备注"
                 >
                 </Input>
             )}
@@ -69,9 +73,9 @@ class AffirmInvoice extends React.Component{
     )
   }
 }
-const mapStateToProps = ({invoice}) => {
+const mapStateToProps = ({affirmInvoice}) => {
   return {
-    invoice: invoice
+    affirmInvoice: affirmInvoice
   }
 }
 export default Form.create()(connect(mapStateToProps)(AffirmInvoice))

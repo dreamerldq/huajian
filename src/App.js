@@ -30,7 +30,7 @@ const App = ({ history }) => (
               <Route path="/apply_invoice_list" component={ApplyInvoiceList} />
               <Route path="/basic_content" component={BasicContent}></Route>
               <Route path="/create_user" component={User}/>
-              <Route path="/affirm_invoice" component={AffirmInvoice}/>
+              <Route path="/affirm_invoice/:id" component={AffirmInvoice}/>
               </Switch>
              </Router>
           </Content>
