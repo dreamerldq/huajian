@@ -14,9 +14,12 @@ async function get_invoice() {
   return data;
 }
 async function affirm_invoice(config) {
-  console.log('AAAA', config);
   await request_post('invoice/affirm_invoice', config);
 }
+async function affirm_invoice_list(config) {
+  const { data } = await request_get('invoice/affirm_invoice_list', config);
+  return data;
+}
 export {
-  apply_invoice, get_invoice, delete_invoice, update_state, affirm_invoice,
+  apply_invoice, get_invoice, delete_invoice, update_state, affirm_invoice, affirm_invoice_list,
 };

@@ -12,7 +12,7 @@ const menus = [
     name: '支出申请列表',
   },
   {
-    key: 'bill',
+    key: 'affirm_invoice_list',
     name: '应收账单',
   },
   {

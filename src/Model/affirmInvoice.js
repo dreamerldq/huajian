@@ -1,32 +1,33 @@
 
 
 import pathToRegexp from 'path-to-regexp';
-import { apply_invoice, get_invoice as get_invoices, affirm_invoice } from '../Servers/invoice';
+import { affirm_invoice, affirm_invoice_list } from '../Servers/invoice';
 
 export default {
   namespace: 'affirmInvoice',
   state: {
-    invoice_type: '',
-    invoice_money: '',
-    principal: '',
-    invoices: [],
+    affirmInvoiceList: [],
     id: '',
   },
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname }) => {
         const match = pathToRegexp('/affirm_invoice/:id').exec(pathname);
+        const matchList = pathToRegexp('/affirm_invoice_list').exec(pathname);
         if (match) {
-          console.log('AAAA', match[1]);
           dispatch({ type: 'saveId', payload: match[1] });
+        }
+        if (matchList) {
+          dispatch({ type: 'getAffirmIvoiceList' });
         }
       });
     },
   },
   reducers: {
-    getInvoice(state, { payload }) {
+    getAffirmInvoiceList(state, { payload }) {
+      console.log('wwwww', payload);
       return {
-        ...state, invoices: payload,
+        ...state, affirmInvoiceList: payload,
       };
     },
     saveId(state, { payload }) {
@@ -38,6 +39,14 @@ export default {
   effects: {
     * create_affirmIvoice({ payload }, { call, put }) {
       const data = yield call(affirm_invoice, payload);
+    },
+    * getAffirmIvoiceList({ payload }, { call, put }) {
+      const data = yield call(affirm_invoice_list);
+      console.log('ppppp', data);
+      yield put({
+        type: 'getAffirmInvoiceList',
+        payload: data,
+      });
     },
   },
 };

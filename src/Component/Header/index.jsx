@@ -18,7 +18,7 @@ class AppHeader extends React.Component {
     if(e.key === 'apply_invoice'){
       this.props.dispatch(routerRedux.push('/'));
     }else{
-      this.props.dispatch(routerRedux.push('/apply_invoice_list'));
+      this.props.dispatch(routerRedux.push(`/${e.key}`));
     }
    
   }
