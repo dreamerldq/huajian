@@ -22,11 +22,6 @@ const columns = [{
   key: 'balance',
 },
 {
-  title: '备注',
-  dataIndex: 'remark',
-  key: 'remark',
-},
-{
   title: '项目负责人',
   dataIndex: 'project_principle',
   key: 'project_principle',

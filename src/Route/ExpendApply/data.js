@@ -17,7 +17,7 @@ const formData = [
   },
   {
     type: 'input',
-    form_name: 'money',
+    form_name: 'expend_money',
     required: true,
     name: '金额',
     message: '请输入金额',

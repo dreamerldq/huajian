@@ -1,7 +1,8 @@
 
 // import pathToRegexp from 'path-to-regexp';
+import { routerRedux } from 'dva/router';
 import {
-  create_expend, expend_list,
+  create_expend, expend_list, update_expend_state, delete_expend,
 } from '../Servers/expend';
 
 export default {
@@ -13,8 +14,8 @@ export default {
     setup({ dispatch, history }) {
       return history.listen(({ pathname }) => {
         // /posts
-        if (pathname === '/apply_invoice_list') {
-          dispatch({ type: 'get_invoice' });
+        if (pathname === '/expend_apply_list') {
+          dispatch({ type: 'get_expend_list' });
         }
       //   // /posts/:key
       //   const match = pathToRegexp('/posts/:key').exec(pathname);
@@ -27,7 +28,7 @@ export default {
   reducers: {
     getInvoice(state, { payload }) {
       return {
-        ...state, invoices: payload,
+        ...state, expendList: payload,
       };
     },
   },
@@ -41,12 +42,16 @@ export default {
     },
     * create_expend({ payload }, { call, put }) {
       const data = yield call(create_expend, payload);
+      console.log('AAA', data);
+      yield put(routerRedux.push('/expend_apply_list'));
     },
-    // * delete_voice({ payload }, { call, put }) {
-    //   const data = yield call(delete_invoice, payload);
-    // },
-    // * update_state({ payload }, { call, put }) {
-    //   const data = yield call(update_state, payload);
-    // },
+    * delete_expend({ payload }, { call, put }) {
+      const data = yield call(delete_expend, payload);
+      yield put({ type: 'get_expend_list' });
+    },
+    * update_state({ payload }, { call, put }) {
+      const data = yield call(update_expend_state, payload);
+      yield put({ type: 'get_expend_list' });
+    },
   },
 };

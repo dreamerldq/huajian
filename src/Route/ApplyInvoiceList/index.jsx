@@ -16,14 +16,7 @@ const tableColumns = (fn, fn2)=>{
           record.state ?
           <span>已开</span>
           :
-          <Popconfirm 
-        title="确定通知？" 
-        okText="是" 
-        cancelText="否"
-        onConfirm={() => fn2(record.id)}
-        >
-         <Button>通知</Button>
-        </Popconfirm>
+          <span>未开</span>
         )
       }
     },
@@ -41,6 +34,7 @@ const tableColumns = (fn, fn2)=>{
     title: '操作',
     key: 'delete',
     render: (text, record) => (
+      <div>
       <span>
         <Popconfirm 
         title="确定删除？" 
@@ -48,9 +42,22 @@ const tableColumns = (fn, fn2)=>{
         cancelText="否"
         onConfirm={() => fn(record.id)}
         >
-         <Button>删除</Button>
+         <Button type="danger">删除</Button>
         </Popconfirm>
       </span>
+      {!record.state ?
+      <span>
+      <Popconfirm 
+        title="确定通知？" 
+        okText="是" 
+        cancelText="否"
+        onConfirm={() => fn2(record.id)}
+        >
+         <Button type="primary">通知</Button>
+        </Popconfirm>
+      </span>:
+    null}
+      </div>
     ),
   }
   ])

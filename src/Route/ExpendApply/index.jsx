@@ -12,7 +12,6 @@ class ExpendApply extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      invoice_type: this.props.invoice.invoice_type
     }
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -21,19 +20,14 @@ class ExpendApply extends React.Component{
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        this.props.dispatch({type:'invoice/create_voice', payload: values})
+        this.props.dispatch({type:'expend/create_expend', payload: values})
         console.log('Received values of form: ', values);
       }
     });
   }
-  choiceInvoice = (value) => {
-    this.setState({
-      invoice_type: value
-    })
-  }
   render(){
     const { getFieldDecorator, getFieldsError } = this.props.form;
-    const {invoice}  = this.props
+    const {expend}  = this.props
     return (
       <Form onSubmit={this.handleSubmit} className="login-form">
         {formData.map((item, index) => {
@@ -66,9 +60,9 @@ class ExpendApply extends React.Component{
     )
   }
 }
-const mapStateToProps = ({invoice}) => {
+const mapStateToProps = ({expend}) => {
   return {
-    invoice: invoice
+    expend: expend
   }
 }
 export default Form.create()(connect(mapStateToProps)(ExpendApply))

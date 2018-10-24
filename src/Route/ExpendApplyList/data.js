@@ -4,12 +4,12 @@ const columns = [{
   key: 'project_name',
 }, {
   title: '支出内容',
-  dataIndex: 'company_name',
-  key: 'company_name',
+  dataIndex: 'expend_content',
+  key: 'expend_content',
 }, {
   title: '金额',
-  dataIndex: 'money',
-  key: 'money',
+  dataIndex: 'expend_money',
+  key: 'expend_money',
 },
 {
   title: '项目负责人',
