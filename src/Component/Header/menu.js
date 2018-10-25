@@ -1,12 +1,12 @@
 const menus = [
-  {
-    key: 'apply_invoice',
-    name: '发票申请',
-  },
-  {
-    key: 'expend_apply',
-    name: '支出申请',
-  },
+  // {
+  //   key: 'apply_invoice',
+  //   name: '发票申请',
+  // },
+  // {
+  //   key: 'expend_apply',
+  //   name: '支出申请',
+  // },
   {
     key: 'apply_invoice_list',
     name: '发票申请列表',

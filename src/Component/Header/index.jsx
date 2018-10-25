@@ -8,19 +8,14 @@ class AppHeader extends React.Component {
   constructor(props){
     super(props)
     this.state={
-      current: 'apply_invoice'
+      current: 'apply_invoice_list'
     }
   }
   choiceMenu = (e) => {
     this.setState({
       current: e.key
     })
-    if(e.key === 'apply_invoice'){
-      this.props.dispatch(routerRedux.push('/'));
-    }else{
-      this.props.dispatch(routerRedux.push(`/${e.key}`));
-    }
-   
+    this.props.dispatch(routerRedux.push(`/${e.key}`));
   }
   render() {
     return (

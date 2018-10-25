@@ -1,6 +1,7 @@
 import { Form, Icon, Input, Button } from 'antd';
 import {connect} from 'dva'
 import React from 'react'
+import styles from './index.scss'
 const FormItem = Form.Item;
 
 function hasErrors(fieldsError) {
@@ -9,7 +10,6 @@ function hasErrors(fieldsError) {
 
 class Login extends React.Component {
   componentDidMount() {
-    // To disabled submit button at the beginning.
     this.props.form.validateFields();
   }
 
@@ -30,12 +30,15 @@ class Login extends React.Component {
     const userNameError = isFieldTouched('userName') && getFieldError('userName');
     const passwordError = isFieldTouched('password') && getFieldError('password');
     return (
-      <Form layout="inline" onSubmit={this.handleSubmit}>
+      <div className={styles.container}>
+       
+        <Form  className={styles.login} layout="inline" onSubmit={this.handleSubmit}>
+        <h2>管理系统</h2>
         <FormItem
           validateStatus={userNameError ? 'error' : ''}
           help={userNameError || ''}
         >
-          {getFieldDecorator('userName', {
+          {getFieldDecorator('username', {
             rules: [{ required: true, message: 'Please input your username!' }],
           })(
             <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
@@ -55,12 +58,16 @@ class Login extends React.Component {
           <Button
             type="primary"
             htmlType="submit"
-            disabled={hasErrors(getFieldsError())}
+            // disabled={hasErrors(getFieldsError())}
           >
-            Log in
+            登陆
           </Button>
         </FormItem>
       </Form>
+       
+       
+      </div>
+      
     );
   }
 }

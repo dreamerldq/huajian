@@ -1,5 +1,7 @@
 import React from 'react';
-import { Router, Route, Switch } from 'dva/router';
+import {
+  Router, Route, Switch, Redirect,
+} from 'dva/router';
 import { Layout } from 'antd';
 import ApplyInvoiceList from './Route/ApplyInvoiceList/index';
 import ApplyInvoice from './Route/ApplyInvoice/index';
@@ -13,38 +15,66 @@ import ExpendApplyList from './Route/ExpendApplyList';
 import FinancialStatistic from './Route/FinancialStatistic';
 import styles from './index.scss';
 
+class ProtectRoute extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const PublicHomePage = this.props.component;
+    const { path } = this.props;
+    const loggedIn = window.localStorage.getItem('login');
+    return (
+      <Route path={path} render={() => (
+        loggedIn ? (
+          <PublicHomePage/>
+        ) : (
+          <Redirect to="/login"/>
+        )
+      )}/>
+    );
+  }
+}
 const {
   Header, Footer, Sider, Content,
 } = Layout;
 
 const App = ({ history }) => (
-      <React.Fragment>
-      <Layout className={styles.container}>
-        <Sider className={styles.slider}>
-          <AppHeader></AppHeader>
-        </Sider>
-        <Layout>
-          {/* <Header className={styles.header}/> */}
-          <Content className={styles.content}>
-            <Router history={history}>
-              <Switch>
-              <Route path="/" exact component={ApplyInvoice}></Route>
-              <Route path="/login" component={Login}/>
+  <React.Fragment>
+    <Router history={history}>
+      <Switch>
+      <Route path="/login" component={Login} />
+      {/* <Route path="/create_user" component={Register} /> */}
+      <ProtectRoute path="/create_user" component={Register}></ProtectRoute>
+      <ProtectRoute path="/apply_invoice" exact component={ApplyInvoice} />
+      <ProtectRoute path="/affirm_invoice/:id" component={AffirmInvoice} />
+      <ProtectRoute path="/expend_apply" component={ExpendApply} />
+        <Layout className={styles.container}>
+          <Sider className={styles.slider}>
+            <AppHeader />
+          </Sider>
+          <Layout>
+            {/* <Header className={styles.header}/> */}
+            <Content className={styles.content}>
+
               <Route path="/apply_invoice_list" component={ApplyInvoiceList} />
-              <Route path="/create_user" component={Register}/>
-              <Route path="/affirm_invoice/:id" component={AffirmInvoice}/>
-              <Route path="/affirm_invoice_list" component={AffirmInvoiceList}/>
-              <Route path="/expend_apply" component={ExpendApply}/>
-              <Route path="/expend_apply_list" component={ExpendApplyList}/>
-              <Route path="/financial_statistic" component={FinancialStatistic}/>
-              </Switch>
-             </Router>
-          </Content>
-          <Footer className={styles.footer}>
-            Hua Jian Project ©2018 Created DreamerLDQ
-          </Footer>
+              <Route
+                path="/affirm_invoice_list"
+                component={AffirmInvoiceList}
+              />
+              <Route path="/expend_apply_list" component={ExpendApplyList} />
+              <Route
+                path="/financial_statistic"
+                component={FinancialStatistic}
+              />
+            </Content>
+            <Footer className={styles.footer}>
+              Hua Jian Project ©2018 Created DreamerLDQ
+            </Footer>
+          </Layout>
         </Layout>
-        </Layout>
-      </React.Fragment>
+      </Switch>
+    </Router>
+  </React.Fragment>
 );
 export default App;

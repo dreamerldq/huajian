@@ -43,6 +43,10 @@ export default {
     * checked_login({ payload }, { call, put }) {
       const { data, status } = yield call(checked_login, payload);
       console.log('AAAA', data, status);
+      if (status === 'success') {
+        window.localStorage.setItem('login', 'true');
+        yield put(routerRedux.push('/apply_invoice_list'));
+      }
     },
     * create_user({ payload }, { call, put }) {
       console.log('上传的值', payload);
