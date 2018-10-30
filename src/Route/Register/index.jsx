@@ -1,14 +1,12 @@
 import { Form, Icon, Input, Button } from 'antd';
 import {connect} from 'dva'
 import React from 'react'
+import styles from './index.scss'
 import user from '../../Model/user';
+import HuaInput from '../../Component/HuaInput'
 const FormItem = Form.Item;
 
 class User extends React.Component {
-  componentDidMount() {
-    // To disabled submit button at the beginning.
-    this.props.form.validateFields();
-  }
 
   handleSubmit = (e) => {
     const {user_id} = this.props.user
@@ -29,49 +27,48 @@ class User extends React.Component {
   render() {
     const { getFieldDecorator, getFieldsError, getFieldError, isFieldTouched } = this.props.form;
     const {user_info,user_id} = this.props.user
+    console.log("AAAA", user_info)
     return (
-      <Form layout="inline" onSubmit={this.handleSubmit}>
-        <FormItem
-        >
+      <div className={styles.container}>
+        <Form className={styles.register}  onSubmit={this.handleSubmit}>
+        <h2>用户注册</h2>
+        <FormItem>
           {getFieldDecorator('user_name', {
-            initialValue: this.props.user.user_info.username,
             rules: [{ required: true, message: 'Please input your username!' }],
             
           })(
-            <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
+            <HuaInput type="text" isRequired label='用户名' />
           )}
         </FormItem>
-        <FormItem
-          
-        >
-          {getFieldDecorator('email', {
-            rules: [{ required: true, message: 'Please input your email!' }],
-            initialValue: this.props.user.user_info.email,
+
+        <FormItem>
+          {getFieldDecorator('password', {
+            // initialValue: this.props.user.user_info.username,
+            rules: [{ required: true, message: 'Please input your password!' }],
             
           })(
-            <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="email" />
+            <HuaInput type='text' isRequired label='密码' />
           )}
         </FormItem>
-        <FormItem
-          
-        >
+        <FormItem>
+          {getFieldDecorator('email', {
+            // initialValue: this.props.user.user_info.username,
+            rules: [{ required: true, message: 'Please input your email!' }],
+            
+          })(
+            <HuaInput type='text' isRequired label='e-mail' />
+          )}
+        </FormItem>
+        <FormItem>
           {getFieldDecorator('phone_number', {
-            rules: [{ required: true, message: 'Please input your phone_number!' }],
-            initialValue: this.props.user.user_info.phone_number
+            // initialValue: this.props.user.user_info.username,
+            rules: [{ required: true, message: 'Please input your telphone!' }],
+            
           })(
-            <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="phone_number" />
+            <HuaInput type='text' isRequired label='电话' />
           )}
         </FormItem>
-        <FormItem
-         
-        >
-          {getFieldDecorator('password', {
-            rules: [{ required: true, message: 'Please input your Password!' }],
-            initialValue: this.props.user.user_info.password
-          })(
-            <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
-          )}
-        </FormItem>
+        
         <FormItem>
           {
             !user_id ?
@@ -93,6 +90,8 @@ class User extends React.Component {
           }
         </FormItem>
       </Form>
+      </div>
+      
     );
   }
 }

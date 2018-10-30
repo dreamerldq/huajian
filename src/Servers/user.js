@@ -17,7 +17,7 @@ async function edit_user(config) {
 
 async function get_user(config) {
   const result = await request_post('user/get_user', config);
-  return result[0];
+  return result;
 }
 export {
   checked_login, create_user, edit_user, get_user,

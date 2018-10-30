@@ -61,11 +61,12 @@ export default {
     },
 
     * get_user({ payload }, { call, put }) {
-      const data = yield call(get_user, { id: payload });
+      const { data, status } = yield call(get_user, { id: payload });
+
 
       yield put({
         type: 'save_user',
-        payload: data,
+        payload: data[0],
       });
     },
   },

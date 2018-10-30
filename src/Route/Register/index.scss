@@ -1,0 +1,30 @@
+.container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540460791122&di=f948da7e7710b5b8200f3beca1b9cc1a&imgtype=0&src=http%3A%2F%2Fwww.deskcar.com%2Fdesktop%2Ffengjing%2F20125700336%2F19.jpg');
+  .register{
+    background: #fff;
+    width: 340px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    :global{
+      .ant-form-item{
+        padding: 0;
+        margin: 0;
+       }
+      .ant-input{
+        width: 300px;
+      }
+      .ant-btn{
+        width: 300px;
+      }
+    }
+  }
+}

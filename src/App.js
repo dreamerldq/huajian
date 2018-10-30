@@ -12,6 +12,7 @@ import AffirmInvoice from './Route/AffirmInvoice/index.jsx';
 import AffirmInvoiceList from './Route/AffirmInvoiceList';
 import ExpendApply from './Route/ExpendApply';
 import ExpendApplyList from './Route/ExpendApplyList';
+import HuaComponents from './Route/HuaComponents';
 import FinancialStatistic from './Route/FinancialStatistic';
 import styles from './index.scss';
 
@@ -43,8 +44,11 @@ const App = ({ history }) => (
   <React.Fragment>
     <Router history={history}>
       <Switch>
+      <Redirect exact from='/' to='/apply_invoice_list'/>
       <Route path="/login" component={Login} />
+
       {/* <Route path="/create_user" component={Register} /> */}
+      <Route path="/components" component={HuaComponents}></Route>
       <ProtectRoute path="/create_user" component={Register}></ProtectRoute>
       <ProtectRoute path="/apply_invoice" exact component={ApplyInvoice} />
       <ProtectRoute path="/affirm_invoice/:id" component={AffirmInvoice} />

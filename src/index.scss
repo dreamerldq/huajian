@@ -13,6 +13,11 @@ body{
       text-align: center;
     }
   }
+  :global{
+    .ant-input{
+      border-radius: 0;
+    }
+  }
 }
 
 
