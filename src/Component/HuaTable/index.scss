@@ -1,0 +1,20 @@
+.hua_table{
+  .table_tr{
+    border-top: 1px solid #ebedf0;
+    border-bottom: 1px solid #ebedf0;
+  }
+  .table_th{
+    background: rgba(0,0,0,.02);
+  }
+  .table_th_solid{
+    background: rgba(0,0,0,.02);
+    border: 1px solid #ebedf0;
+  }
+  .table_td{
+    background: rgba(0,0,0,.01);
+  }
+  .table_td_solid{
+    background: rgba(0,0,0,.01);
+    border: 1px solid #ebedf0;
+  }
+}

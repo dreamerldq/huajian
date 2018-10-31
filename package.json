@@ -52,6 +52,7 @@
     "dva": "^2.4.0",
     "electron": "^2.0.8",
     "electron-packager": "^12.1.1",
+    "lodash": "^4.17.11",
     "mobx": "^5.1.0",
     "mobx-react": "^5.2.6",
     "moment": "^2.22.2",
