@@ -4,6 +4,7 @@ import HuaTable from '../../Component/HuaTable'
 import HuaPagination from '../../Component/HuaPagination'
 import HuaTabs from '../../Component/HuaTabs'
 import HuaCollapse from '../../Component/HuaCollapse'
+import notification from '../../Component/HuaNotification'
 import HuaTimeLine from '../../Component/HuaTimeline'
 import {Button, Icon} from 'antd'
 const dataSource = [{
@@ -98,6 +99,50 @@ export default class HuaComponents extends React.Component{
       console.log("zzz",this.state.activeKey)
     })
   }
+  notice = (value) => {
+    switch(value){
+      case 1:
+      notification.open({
+        message: 'Notification Title 1',
+        description: 'I will never close automatically. I will be close automatically. I will never close automatically.',
+        duration: 3
+      })
+      break;
+
+      case 2:
+      notification.open({
+        message: 'Notification Title 2',
+        description: 'I will never close automatically. I will be close automatically. I will never close automatically.',
+        duration: 3
+      })
+      break;
+
+      case 3:
+      notification.open({
+        message: 'Notification Title 3',
+        description: 'I will never close automatically. I will be close automatically. I will never close automatically.',
+        duration: 3
+      })
+      break;
+
+      case 4:
+      notification.open({
+        message: 'Notification Title 4',
+        description: 'I will never close automatically. I will be close automatically. I will never close automatically.',
+        duration: 3
+      })
+      break;
+
+      case 5:
+      notification.open({
+        message: 'Notification Title 5',
+        description: 'I will never close automatically. I will be close automatically. I will never close automatically.',
+        duration: 3
+      })
+      break;
+    }
+    
+  }
   render(){
     const {current, pageSize} = this.state
     return(
@@ -151,8 +196,8 @@ export default class HuaComponents extends React.Component{
                <p>面板三,面板三,面板三,面板三,面板三,面板三</p>
                </HuaCollapse.Panel>
             </HuaCollapse> */}
-             <HuaTimeLine>
-          <HuaTimeLine.Item color="green">
+             {/* <HuaTimeLine>
+                <HuaTimeLine.Item color="green">
                   <p>Create a services site 2015-09-01</p>
                   <p>Create a services site 2015-09-01</p>
                   <p>Create a services site 2015-09-01</p>
@@ -161,7 +206,13 @@ export default class HuaComponents extends React.Component{
                 <HuaTimeLine.Item>Solve initial network problems 2015-09-01</HuaTimeLine.Item>
                 <HuaTimeLine.Item>Technical testing 2015-09-01</HuaTimeLine.Item>
                 <HuaTimeLine.Item>Network problems being solved 2015-09-01</HuaTimeLine.Item>
-             </HuaTimeLine>
+             </HuaTimeLine> */}
+             <Button onClick={this.notice.bind(this, 1)}>按钮1</Button>
+             <Button onClick={this.notice.bind(this, 2)}>按钮2</Button>
+             <Button onClick={this.notice.bind(this, 3)}>按钮3</Button>
+             <Button onClick={this.notice.bind(this, 4)}>按钮4</Button>
+             <Button onClick={this.notice.bind(this, 5)}>按钮5</Button>
+             <Button onClick={this.notice.bind(this, 6)}>按钮6</Button>
       </div>
     )
   }
