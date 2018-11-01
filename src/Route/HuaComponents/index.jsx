@@ -6,6 +6,7 @@ import HuaTabs from '../../Component/HuaTabs'
 import HuaCollapse from '../../Component/HuaCollapse'
 import notification from '../../Component/HuaNotification'
 import HuaTimeLine from '../../Component/HuaTimeline'
+import HuaLoading from '../../Component/HuaLoading'
 import {Button, Icon} from 'antd'
 const dataSource = [{
   key: '1',
@@ -67,7 +68,8 @@ export default class HuaComponents extends React.Component{
       current: 1,
       pageSize: 10,
       currentTabs:"1",
-      activeKey: null
+      activeKey: null,
+      loading: true
     }
   }
   handleChange = (value) =>{
@@ -143,26 +145,36 @@ export default class HuaComponents extends React.Component{
     }
     
   }
+  componentDidMount(){
+    setTimeout(() => {
+      this.setState({
+        loading: false
+      })
+    }, 2000);
+  }
   render(){
     const {current, pageSize} = this.state
     return(
-      <div>
+      <HuaLoading loading={this.state.loading}>
+      
           
-            {/* <HuaSelect defaultValue="lucy" onHandleChange={this.handleChange}>
+            <HuaSelect defaultValue="lucy" onHandleChange={this.handleChange}>
               <HuaSelect.Option value="jack">Jack</HuaSelect.Option>
               <HuaSelect.Option value="lucy">Lucy</HuaSelect.Option>
               <HuaSelect.Option value="Yiminghe">yiminghe</HuaSelect.Option>
-            </HuaSelect> */}
+            </HuaSelect>
          
           
-          {/* <HuaTable
-             dataSource={dataSource}
-             columns={columns}
-             bordered
-             local={{
-              emptyText: '暂无数据'
-             }}
-            />
+          
+            <HuaTable
+              dataSource={dataSource}
+              columns={columns}
+              bordered
+              local={{
+                emptyText: '暂无数据'
+              }}
+              />
+          
             <HuaPagination
              onChange={this.handleCurrentPage}
              onShowSizeChange={this.handleSizeChange}
@@ -170,8 +182,8 @@ export default class HuaComponents extends React.Component{
              pageSize={pageSize}
              current={current}
            
-            ></HuaPagination> */}
-            {/* <HuaTabs activeKey={this.state.currentTabs} onChange={this.handleTabs}>
+            ></HuaPagination>
+            <HuaTabs activeKey={this.state.currentTabs} onChange={this.handleTabs}>
                <HuaTabs.Item tab="一" key="1">
                   <div>第一页</div>
                </HuaTabs.Item >
@@ -181,9 +193,9 @@ export default class HuaComponents extends React.Component{
                <HuaTabs.Item tab="三" key="3">
                   <div>第三页</div>
                </HuaTabs.Item>
-            </HuaTabs> */}
+            </HuaTabs>
 
-            {/* <HuaCollapse activeKey={this.state.activeKey} onChange={this.handlePanel}>
+            <HuaCollapse activeKey={this.state.activeKey} onChange={this.handlePanel}>
                <HuaCollapse.Panel header="This is panel  header 1" value="1">
                   <p>面板一,面板一,面板一,面板一,面板一,面板一</p>
                </HuaCollapse.Panel>
@@ -195,8 +207,8 @@ export default class HuaComponents extends React.Component{
                <HuaCollapse.Panel header="This is panel  header 3" value="3">
                <p>面板三,面板三,面板三,面板三,面板三,面板三</p>
                </HuaCollapse.Panel>
-            </HuaCollapse> */}
-             {/* <HuaTimeLine>
+            </HuaCollapse>
+             <HuaTimeLine>
                 <HuaTimeLine.Item color="green">
                   <p>Create a services site 2015-09-01</p>
                   <p>Create a services site 2015-09-01</p>
@@ -206,14 +218,14 @@ export default class HuaComponents extends React.Component{
                 <HuaTimeLine.Item>Solve initial network problems 2015-09-01</HuaTimeLine.Item>
                 <HuaTimeLine.Item>Technical testing 2015-09-01</HuaTimeLine.Item>
                 <HuaTimeLine.Item>Network problems being solved 2015-09-01</HuaTimeLine.Item>
-             </HuaTimeLine> */}
+             </HuaTimeLine>
              <Button onClick={this.notice.bind(this, 1)}>按钮1</Button>
              <Button onClick={this.notice.bind(this, 2)}>按钮2</Button>
              <Button onClick={this.notice.bind(this, 3)}>按钮3</Button>
              <Button onClick={this.notice.bind(this, 4)}>按钮4</Button>
              <Button onClick={this.notice.bind(this, 5)}>按钮5</Button>
              <Button onClick={this.notice.bind(this, 6)}>按钮6</Button>
-      </div>
+             </HuaLoading>
     )
   }
 }
