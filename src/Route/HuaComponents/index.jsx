@@ -6,6 +6,7 @@ import HuaTabs from '../../Component/HuaTabs'
 import HuaCollapse from '../../Component/HuaCollapse'
 import notification from '../../Component/HuaNotification'
 import HuaTimeLine from '../../Component/HuaTimeline'
+import HuaDrawer from '../../Component/HuaDrawer'
 import HuaLoading from '../../Component/HuaLoading'
 import {Button, Icon} from 'antd'
 const dataSource = [{
@@ -69,7 +70,8 @@ export default class HuaComponents extends React.Component{
       pageSize: 10,
       currentTabs:"1",
       activeKey: null,
-      loading: true
+      loading: true,
+      dispaly: false,
     }
   }
   handleChange = (value) =>{
@@ -99,6 +101,12 @@ export default class HuaComponents extends React.Component{
       activeKey: tab
     }, () => {
       console.log("zzz",this.state.activeKey)
+    })
+  }
+
+  handleDisplay = () => {
+    this.setState({
+      dispaly: !this.state.dispaly
     })
   }
   notice = (value) => {
@@ -226,6 +234,10 @@ export default class HuaComponents extends React.Component{
              <Button onClick={this.notice.bind(this, 4)}>按钮4</Button>
              <Button onClick={this.notice.bind(this, 5)}>按钮5</Button>
              <Button onClick={this.notice.bind(this, 6)}>按钮6</Button>
+             <HuaDrawer dispaly={this.state.dispaly}>
+               抽屉
+             </HuaDrawer>
+             <Button onClick={this.handleDisplay}>显示</Button>
              </HuaLoading>
     )
   }
