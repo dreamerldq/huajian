@@ -12,6 +12,7 @@ import HuaLayout from '../../Component/HuaLayout'
 import HuaMenu from '../../Component/HuaMenu'
 const {SubMenu, MenuItemGroup} = HuaMenu
 const { Header, Content, Footer } = HuaLayout
+import HuaButton from '../../Component/HuaButton'
 import {Button, Icon} from 'antd'
 const dataSource = [{
   key: '1',
@@ -174,35 +175,43 @@ export default class HuaComponents extends React.Component{
   }
   render(){
     return(
-      <HuaLayout>
-          <Header>
-              <HuaMenu 
-                onClick={this.handleMenuChange}
-                selectedKeys = {[this.state.currentMenu]}
-                >
-                  <HuaMenu.Item key="mail">邮箱</HuaMenu.Item>
-                  <HuaMenu.Item key="app">App</HuaMenu.Item>
-                  <SubMenu title={<span className="submenu-title-wrapper"><Icon type="setting" />Navigation Three - Submenu</span>}>
-                    <MenuItemGroup title="Item 1">
-                      <HuaMenu.Item key="setting:1">Option 1</HuaMenu.Item>
-                      <HuaMenu.Item key="setting:2">Option 2</HuaMenu.Item>
-                    </MenuItemGroup>
-                    <MenuItemGroup title="Item 2">
-                      <HuaMenu.Item key="setting:3">Option 3</HuaMenu.Item>
-                      <HuaMenu.Item key="setting:4">Option 4</HuaMenu.Item>
-                    </MenuItemGroup>
-                  </SubMenu>
-              </HuaMenu>
-          </Header>
-          <Content>
-             <div style={{width: '100%', background: '#f0f0f0'}}>内容</div>
-          </Content>
-          <Footer>
-              底部
-          </Footer>
-      </HuaLayout>
+     <React.Fragment>
+        <HuaButton  type="primary">按钮</HuaButton>
+        <HuaButton type="danger">按钮</HuaButton>
+     </React.Fragment>
     )
   }
+  // render(){
+  //   return(
+  //     <HuaLayout>
+  //         <Header>
+  //             <HuaMenu 
+  //               onClick={this.handleMenuChange}
+  //               selectedKeys = {[this.state.currentMenu]}
+  //               >
+  //                 <HuaMenu.Item key="mail">邮箱</HuaMenu.Item>
+  //                 <HuaMenu.Item key="app">App</HuaMenu.Item>
+  //                 <SubMenu title={<span className="submenu-title-wrapper"><Icon type="setting" />Navigation Three - Submenu</span>}>
+  //                   <MenuItemGroup title="Item 1">
+  //                     <HuaMenu.Item key="setting:1">Option 1</HuaMenu.Item>
+  //                     <HuaMenu.Item key="setting:2">Option 2</HuaMenu.Item>
+  //                   </MenuItemGroup>
+  //                   <MenuItemGroup title="Item 2">
+  //                     <HuaMenu.Item key="setting:3">Option 3</HuaMenu.Item>
+  //                     <HuaMenu.Item key="setting:4">Option 4</HuaMenu.Item>
+  //                   </MenuItemGroup>
+  //                 </SubMenu>
+  //             </HuaMenu>
+  //         </Header>
+  //         <Content>
+  //            <div style={{width: '100%', background: '#f0f0f0'}}>内容</div>
+  //         </Content>
+  //         <Footer>
+  //             底部
+  //         </Footer>
+  //     </HuaLayout>
+  //   )
+  // }
   // render(){
   //   const {current, pageSize} = this.state
   //   return(
